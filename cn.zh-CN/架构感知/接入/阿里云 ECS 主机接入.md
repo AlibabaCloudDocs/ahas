@@ -1,6 +1,6 @@
 # 阿里云 ECS 主机接入 {#concept_xw3_z3y_ngb .concept}
 
-通过一键安装 AHAS 探针，可快速将阿里云环境中的 ECS 主机（Linux）接入 AHAS 控制台，查看其系统架构、进行故障测评；通过安装 Java 探针，可同时使用流控降级等功能。
+通过一键安装 AHAS 探针，可快速将阿里云环境中的 ECS 主机（Linux）接入 AHAS 控制台，查看其系统架构、进行故障测评。
 
 ## 前提条件 {#section_hpc_5yy_ngb .section}
 
@@ -44,80 +44,10 @@
     -   如需为多台主机批量安装探针，请勾选目标主机左侧的复选框，并在页面左下角单击**批量安装**。
     ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/pg_wizard_2.png)
 
-4.  单击**下一步**。
-5.  如果需要同时使用流控降级功能，则需要安装 Java 探针；否则可跳过。
+4.  单击**下一步**，查看已安装的探针。
+5.  单击**完成**。
 
-    根据 Java 虚拟机运行的环境，您可以从以下方式中选择一种方式来传入 Java 探针：
-
-    -   **方式一：非容器化应用服务器**
-
-        1.  确认文件 ahas-java-agent.jar 已经下载到主机的/opt/aliyunahas/agent目录下。通常，安装 AHAS 探针成功后，AHAS Java 探针也会随之下载到主机的 /opt/aliyunahas/agent目录下。
-        2.  在应用 JVM 启动命令中，添加以下参数，将 AppName 替换为您的应用名称。
-
-            ```
-            -Dproject.name=AppName -Dahas.namespace=default -javaagent:/opt/aliyunahas/agent/ahas-java-agent.jar
-            ```
-
-        3.  启动 JVM。
-        **说明：** 更多具体示例，请查看控制台引导页面提示。
-
-    -   **方式二：Docker 容器**
-        1.  初始化 ahas-java-agent 容器。
-
-            ```
-            sudo docker pull \
-            registry.cn-hangzhou.aliyuncs.com/ahascr/ahas-java-agent:latest && \
-            docker run \
-            --rm \
-            --detach \
-            --privileged=true \
-            -v ahas-javaagent:/var/lib/aliyunahas/agent:rw \
-            registry.cn-hangzhou.aliyuncs.com/ahascr/ahas-java-agent:latest
-            ```
-
-        2.  将 ahas-java-agent 挂载到相应的 Java 应用容器上。在 docker run命令后面添加以下启动参数。如已有 JAVA\_OPTS，可将内容添加在后面。将 AppName 替换为您的应用名称。
-
-            ```
-            -v ahas-javaagent:/var/lib/aliyunahas/agent:rw \
-            --env JAVA_OPTS="-Dproject.name=AppName -Dahas.namespace=default -javaagent:/var/lib/aliyunahas/agent/ahas-java-agent.jar"
-            ```
-
-    -   **方式三：Docker Compose**
-        1.  初始化 ahas-java-agent 容器。
-
-            ```
-            sudo docker pull \
-            registry.cn-hangzhou.aliyuncs.com/ahascr/ahas-java-agent:latest && \
-            docker run \
-            --rm \
-            --detach \
-            --privileged=true \
-            -v ahas-javaagent:/var/lib/aliyunahas/agent:rw \
-            registry.cn-hangzhou.aliyuncs.com/ahascr/ahas-java-agent:latest
-            ```
-
-        2.  在 docker-compose.yaml 中添加以下配置项。如已有JAVA\_OPTS，可将内容添加在后面。将 AppName 替换为您的应用名称。
-
-            ```
-            environment: 
-            - JAVA_OPTS="-Dproject.name=AppName -Dahas.namespace=default -javaagent:/var/lib/aliyunahas/agent/ahas-java-agent.jar"
-            volumes:
-            - ahas-javaagent:/var/lib/aliyunahas/agent:rw
-            ```
-
-        3.  在 docker-compose.yaml 文件的最后面添加以下内容。
-
-            ```
-            volumes:
-             ahas-javaagent:
-              external: true
-            ```
-
-        4.  重启 Docker Compose。
-
-            ```
-            docker-compose up --build -d
-            ```
+    接入成功后，在 AHAS 控制台左侧导航栏，选择**架构感知**，将显示已接入应用的系统架构。
 
 
 ## 后续操作 {#section_sxn_k2z_ngb .section}
@@ -126,5 +56,4 @@
 
 -   [查看系统架构](intl.zh-CN/架构感知/查看系统架构.md#)
 -   [测评应用的高可用能力](../../../../../intl.zh-CN/.md#)
--   [实时监控应用数据](../../../../../intl.zh-CN/流控降级/控制台指南/实时监控应用数据.md#)
 
