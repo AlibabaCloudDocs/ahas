@@ -6,9 +6,9 @@
     -   自动感知应用的拓扑结构
     -   以可视化的方式直观呈现应用对基础架构的依赖关系和组件间的依赖关系
     -   持续记录上述依赖关系
--   [应用高可用能力测评](intl.zh-CN/产品简介/什么是应用高可用服务 AHAS（Application High Availability Service）.md#section_lbt_wwb_kgb)：
-    -   提供基于真实线上故障的高可用能力测评服务
-    -   根据您的应用架构智能推荐测评场景
+-   [故障演练](intl.zh-CN/产品简介/什么是应用高可用服务 AHAS（Application High Availability Service）.md#section_lbt_wwb_kgb)：
+    -   提供基于真实线上故障的高可用能力演练服务
+    -   根据您的应用架构智能推荐故障演练场景
 -   [流控降级](intl.zh-CN/产品简介/什么是应用高可用服务 AHAS（Application High Availability Service）.md#section_wkt_xwb_kgb)：
     -   专业化多样化的限流手段
     -   实时秒级的监控
@@ -43,7 +43,7 @@
     ![架构感知](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/ex_arch_visulization.png "架构可视化")
 
 
-## 高可用能力测评 {#section_lbt_wwb_kgb .section}
+## 故障演练 {#section_lbt_wwb_kgb .section}
 
 -   **功能**
 
@@ -51,17 +51,17 @@
 
 -   **工作流程**
 
-    ![高可用能力测评工作流程](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_test_workflow.png "高可用能力测评工作流程")
+    ![故障演练工作流程](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_test_workflow.png "故障演练工作流程")
 
-    如图所示，高可用能力测评模块的工作流程为：
+    如图所示，故障演练评模块的工作流程为：
 
     1.  架构感知：根据架构感知模块对命令行、依赖等的分析，识别出系统中的实例和组件。
     2.  能力映射：将组件与高可用能力模型中的架构准则和能力进行映射。
     3.  场景映射：将高可用能力和标类场景进行映射。
-    4.  测评执行：通过上述步骤明确系统稳定性要求，找出有针对性的测评内容，然后通过流程化的测评引导您执行推荐的测评任务。
-    5.  测评报告：测评任务完成后，以测评报告总结测评结果。
+    4.  演练执行：通过上述步骤明确系统稳定性要求，找出有针对性的故障演练然后通过流程化的故障演练引导您执行推荐的故障演练任务。
+    5.  故障演练报告：故障演练任务完成后，以故障演练报告总结故障演练结果。
 
-![高可用能力测评](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/ex_fault_testing.png "高可用能力测评")
+![故障演练](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/ex_fault_testing.png "故障演练")
 
 ## 流控降级 {#section_wkt_xwb_kgb .section}
 
@@ -82,18 +82,18 @@
 
 -   **微服务高可用**
 
-    如今，Spring Cloud、Kubernetes 的微服务架构对服务的高可用性提出了前所未有的挑战。借助 AHAS，您可以在零代码改动的前提下，快速使用 SaaS 化的高可用服务，包括架构可视化、架构变化追踪、故障测评和流控降级保护。
+    如今，Spring Cloud、Kubernetes 的微服务架构对服务的高可用性提出了前所未有的挑战。借助 AHAS，您可以在零代码改动的前提下，快速使用 SaaS 化的高可用服务，包括架构可视化、架构变化追踪、故障演练和流控降级保护。
 
-    AHAS 支持 Spring Cloud 组件的快速发现、组件高可用能力测评，以及 SpringBoot 应用的一键流控降级。此外，AHAS 还支持 Kubernetes 环境的快速接入。
+    AHAS 支持 Spring Cloud 组件的快速发现、故障演练能力，以及 SpringBoot 应用的一键流控降级。此外，AHAS 还支持 Kubernetes 环境的快速接入。
 
 -   **传统应用高可用**
 
     由于缺乏高可用能力，对于传统的 Java 单体应用和分布式应用而言，如何保障稳定性和连续性向来是个难题。
 
-    AHAS 提供了应用高可用保障所必需的架构实时展现与追踪、架构高可用性测评，以及 Java 应用零代码改动接入流控降级的能力。即便是已上线的应用，也无需升级改造。此外，对于引入的开源或第三方组件，AHAS 可以进行自动化智能评估，并提供优化使用方面的指导。​
+    AHAS 提供了应用高可用保障所必需的架构实时展现与追踪、架构高可用性故障演练，以及 Java 应用零代码改动接入流控降级的能力。即便是已上线的应用，也无需升级改造。此外，对于引入的开源或第三方组件，AHAS 可以进行自动化智能评估，并提供优化使用方面的指导。​
 
 
 ## 相关文档 {#section_hkb_fvv_1fb .section}
 
--   [第三方组件和云服务支持列表](../intl.zh-CN/.md#)
+-   [第三方组件和云服务支持列表](../intl.zh-CN/架构感知/第三方组件和云服务支持列表.md#)
 
