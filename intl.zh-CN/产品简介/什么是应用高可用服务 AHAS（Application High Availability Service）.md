@@ -1,6 +1,6 @@
 # 什么是应用高可用服务 AHAS（Application High Availability Service） {#concept_erb_lkb_kgb .concept}
 
-应用高可用服务（Application High Availability Service）是一款专注于提高应用高可用能力的 SaaS 产品，包含三大独立的功能模块：
+应用高可用服务（Application High Availability Service）是一款专注于提高应用高可用能力的 SaaS 产品，包含架构感知、故障演练和流控降级（即限流降级）三大独立的功能模块。
 
 -   [架构感知](intl.zh-CN/产品简介/什么是应用高可用服务 AHAS（Application High Availability Service）.md#section_adl_vwb_kgb)：
     -   自动感知应用的拓扑结构
@@ -67,11 +67,11 @@
 
 -   **功能**
 
-    在当今日益复杂的应用环境下，应用设计应该遵循“面向失败”的设计原则，对上下游的依赖零信任。借助流控降级模块，您的应用有能力对流量采取限流控制，以及对下游依赖进行降级处理。
+    在当今日益复杂的应用环境下，应用设计应该遵循“面向失败”的设计原则，对上下游的依赖零信任。借助流量控制、熔断降级模块，您的应用有能力对流量采取限流控制，并对下游依赖进行降级处理。
 
 -   **工作流程**
 
-    流控降级模块支持主流的 Java 框架，包括 HTTP、Dubbo。该模块可以实时监控框架的 QPS（Queries per Second，每秒查询数）、线程数、响应时间、异常数等指标，并有选择地截断对这些框架的访问，从而保护应用的可用性。此外，利用 AHAS 提供的 SDK，您还可以采取更细粒度的代码级流控降级防护措施。
+    流控降级模块支持主流的 Java 框架，包括 HTTP 和 Dubbo。该模块可以实时监控框架的 QPS（Queries per Second，每秒查询数）、线程数、响应时间、异常数等指标，并有选择地截断对这些框架的访问，从而保护应用的可用性。此外，利用 AHAS 提供的 SDK，您还可以采取更细粒度的代码级限流降级防护措施。
 
     ![流控降级工作流程](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_safeguarding_workflow.png "流控降级工作流程")
 
@@ -84,7 +84,9 @@
 
     如今，Spring Cloud、Kubernetes 的微服务架构对服务的高可用性提出了前所未有的挑战。借助 AHAS，您可以在零代码改动的前提下，快速使用 SaaS 化的高可用服务，包括架构可视化、架构变化追踪、故障演练和流控降级保护。
 
-    AHAS 支持 Spring Cloud 组件的快速发现、故障演练能力，以及 SpringBoot 应用的一键流控降级。此外，AHAS 还支持 Kubernetes 环境的快速接入。
+    AHAS 支持 Spring Cloud 组件的快速发现、故障演练能力，以及 SpringBoot 应用的一键流控降级。
+
+    AHAS 支持阿里云容器服务 Kubernetes 应用的快速接入。
 
 -   **传统应用高可用**
 
