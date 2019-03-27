@@ -29,10 +29,7 @@
 
 当您在地域列表中选择了**公网**，按照以下步骤安装应用高可用探针和 Java 探针。
 
-1.  在 AHAS 控制台的**概览**页，单击**架构感知**模块下的**安装向导**。
-
-    ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/sc_ecs_agent_installation_overview.png)
-
+1.  在 AHAS 控制台左侧导航栏，选择**探针管理**，单击页面右上角的**安装架构感知探针**。
 2.  在选择环境页签下，单击您要安装的环境。
 
     ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/pg_linux.png)
@@ -63,5 +60,5 @@
 接入成功后，您可以执行操作：
 
 -   [查看系统架构](intl.zh-CN/架构感知/查看系统架构.md#)
--   [测评应用的高可用能力](../../../../../intl.zh-CN/故障演练/测评应用的高可用能力.md#)
+-   [测评应用的高可用能力](../../../../../intl.zh-CN/故障演练/故障演练.md#)
 
