@@ -2,34 +2,32 @@
 
 通过 SDK 接入的方式，将 Dubbo 应用接入 AHAS 控制台，使用流控降级服务。目前 AHAS 提供 Java SDK。
 
-**说明：** 关于 Java SDK 的常用 API，参见 [Java SDK 参考](../intl.zh-CN/流控降级/开发指南/Java SDK 参考/定义资源.md#)。
-
 ## 操作步骤 {#section_ry5_m4d_bhb .section}
 
 为 Dubbo 应用引入依赖包后，即可接入 AHAS 流控降级并自动定义资源，无需额外配置。
 
 1.  通过以下任意一种方式，为应用添加依赖。
-    -   方式一（推荐）：在 pom.xml 文件中引入如下依赖：
+    -   方式一（推荐）：在 pom.xml 文件中引入依赖：
 
         ```
         <dependency>
           <groupId>com.alibaba.csp</groupId>
           <artifactId>ahas-sentinel-client</artifactId>
-          //可指定版本号，最新版本以 AHAS 控制台流控降级应用接入页引导为准。
+          <!-- 可指定版本号，最新版本见 AHAS 控制台流控降级应用接入页引导。 -->
           <version>1.1.0</version>
         </dependency>
         ```
 
     -   方式二：添加 JAR 包依赖。
         1.  [下载 ahas-sentinel 依赖包](http://ahasoss-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sdk/1.1.0/ahas-sentinel.zip?spm=5176.11961263.SystemGuard.8.769e3bc1c6ehKR&file=ahas-sentinel.zip) 。
-        2.  解压压缩包，将压缩包中的所有 JAR 包到放置在 classpath 下，引入即可。
+        2.  解压压缩包，将压缩包中的所有 JAR 包放置在 classpath 下。
 2.  通过以下任意一种方式，配置应用的启动参数。
     -   添加 JVM -D 参数
 
         ```
-        //可修改 AppName 自定义您的应用名称
-        //通过公网 Region 接入时，需要您的证书信息；其他地域不需要证书。
-        //License 获取方式：在 AHAS 控制台左侧导航栏选择**流控降级**，选择右上角**应用接入**，在**配置启动参数**页签下，找到您的 License 信息。
+        //将AppName替换为自定义的应用名称
+        //通过公网地域接入时，需要您的证书信息；其他地域不需要证书。
+        //证书获取方式：在 AHAS 控制台左侧导航栏选择**流控降级**，选择右上角**应用接入**，在**配置启动参数**页签下，找到您的 证书信息。
         -Dproject.name=AppName -Dahas.license=xxx
         ```
 
@@ -37,26 +35,26 @@
 
         如果您正在使用 Spring，并且希望将配置写入 Spring Property 文件中，参照以下步骤：
 
-        1.  在 pom.xml 中引入如下依赖：
+        1.  在 pom.xml 中引入依赖：
 
             ```
             <dependency>
               <groupId>com.alibaba.csp</groupId>
               <artifactId>spring-boot-starter-ahas-sentinel-client</artifactId>
-              //可指定版本号，最新版本以 AHAS 控制台流控降级应用接入页引导为准。
+              <!-- 可指定版本号，最新版本见 AHAS 控制台流控降级应用接入页引导。 -->
               <version>1.1.0</version>
             </dependency>
             ```
 
-        2.  在 application.properties 配置文件中，进行如下配置：
+        2.  在 application.properties 配置文件中，配置如下：
 
             ```
-            //可指定您要接入的特定的 AHAS 环境
+            #指定您要接入的特定的 AHAS 环境
             ahas.namespace=default
-            //可自定义您的应用名称
+            #自定义您的应用名称
             project.name=AppName
-            //通过公网 Region 接入时，需要您的证书信息；其他地域不需要证书。
-            //License 获取方式：在 AHAS 控制台左侧导航栏选择**流控降级**，选择右上角**应用接入**，在**配置启动参数**页签下，找到您的 License 信息。
+            #通过公网地域接入时，需要您的证书信息；其他地域不需要证书。
+            #证书获取方式：在 AHAS 控制台左侧导航栏选择**流控降级**，选择右上角**应用接入**，在**配置启动参数**页签下，找到您的证书信息。
             ahas.license=xxx
             ```
 
@@ -67,10 +65,11 @@
 
 接入了 AHAS 的流控降级服务后，您可以进一步了解：
 
--    [实时监控应用数据](..md) 
--    [流控规则](..md) 
--    [降级规则](..md) 
--    [系统规则](..md) 
+-    [实时监控应用数据](../intl.zh-CN/流控降级/控制台指南/实时监控应用数据.md#)
+-    [流控规则](../intl.zh-CN/流控降级/控制台指南/流控规则.md#) 
+-   [降级规则](../intl.zh-CN/流控降级/控制台指南/降级规则.md#)
+-    [系统规则](../intl.zh-CN/流控降级/控制台指南/系统规则.md#) 
+-   [Java SDK 参考](../intl.zh-CN/流控降级/开发指南/Java SDK 参考/定义资源.md#)。
 
 ## 常见问题 {#section_umj_m2j_kgb .section}
 
