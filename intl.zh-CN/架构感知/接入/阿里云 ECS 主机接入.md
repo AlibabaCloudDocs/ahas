@@ -4,7 +4,7 @@
 
 ## 前提条件 {#section_hpc_5yy_ngb .section}
 
-已[开通 AHAS 服务](../../../../../intl.zh-CN/准备工作/开通 AHAS 服务.md#)。
+已开通 AHAS 服务，参见[开通 AHAS 服务](../../../../cn.zh-CN/准备工作/开通 AHAS.md#)。
 
 ## 选择地域 {#section_fdp_jky_ngb .section}
 
@@ -14,19 +14,19 @@
 
 2.  在控制台左上角，选择您的主机所在的地域。
 
-    **说明：** 已开通的地域包括北京、杭州、深圳，其他地域陆续开放中；目前，其他地域的阿里云 ECS 主机可以通过“公网”地域接入，接入方式可参考[普通 Linux 主机接入](intl.zh-CN/架构感知/接入/普通 Linux 主机接入.md#)。
+    **说明：** 已开通的地域包括北京、杭州、上海、深圳，其他地域陆续开放中；目前，其他地域的阿里云 ECS 主机可以通过“公网”地域接入，接入方式可参考[普通 Linux 主机接入](cn.zh-CN/架构感知/接入/普通 Linux 主机接入.md#)。
 
 3.  （可选）每个地域会有一个默认（Default）环境，您也可以添加自定义环境，如开发环境、测试环境等。
     1.  单击概览页面左上角的下拉列表，单击**添加环境**。
 
-        ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/sc_env_selection.png) 
+        ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/sc_env_selection.png)
 
     2.  填写环境名称，单击**确定**。添加完成后，即可以在刚刚添加的环境中进行操作。
 
         如需切换，单击左上角下拉菜单，选择其他环境。
 
 
-## 安装探针（地域：北京、杭州或深圳） {#section_yyy_gjv_cgb .section}
+## 安装探针（地域：北京、杭州、上海或深圳） {#section_yyy_gjv_cgb .section}
 
 按照下面的操作步骤为阿里云 ECS 主机安装应用高可用探针和 Java 探针，接入 AHAS 控制台。
 
@@ -51,6 +51,6 @@
 
 接入成功后，您可以执行操作：
 
--   [查看系统架构](intl.zh-CN/架构感知/查看系统架构.md#)
--   [测评应用的高可用能力](../../../../../intl.zh-CN/故障演练/故障演练.md#)
+-   [查看系统架构](cn.zh-CN/架构感知/查看系统架构.md#)
+-   [测评应用的高可用能力](../../../../cn.zh-CN/故障演练/故障演练概述.md#)
 
