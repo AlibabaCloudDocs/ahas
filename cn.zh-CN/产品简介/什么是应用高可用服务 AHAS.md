@@ -43,25 +43,27 @@
     ![架构感知](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/ex_arch_visulization.png "架构可视化")
 
 
-## 故障演练 {#section_lbt_wwb_kgb .section}
+## 故障演练 {#section_zxh_gd3_hhb .section}
 
--   **功能**
+故障演练是一款遵循混沌工程实验原理并融合了阿里巴巴内部实践的产品，提供丰富故障场景实现，能够帮助分布式系统提升容错性和可恢复性。
 
-    根据架构感知模块捕捉到的架构数据主动制造故障，检验应用系统及其各组件在故障下的可用性表现，从而验证应用系统的高可用能力，提前暴露故障隐患，帮助您针对性地应对风险。
+-   **流程**
 
--   **工作流程**
+    故障演练建立了一套标准的演练流程，包含准备阶段、执行阶段、检查阶段和恢复阶段。通过四阶段的流程，覆盖用户从计划到还原的完整演练过程，并通过可视化的方式清晰的呈现给用户。
 
-    ![故障演练工作流程](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_test_workflow.png "故障演练工作流程")
+    ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_chaos_process.png) 
 
-    如图所示，故障演练评模块的工作流程为：
+-   **适用场景**
 
-    1.  架构感知：根据架构感知模块对命令行、依赖等的分析，识别出系统中的实例和组件。
-    2.  能力映射：将组件与高可用能力模型中的架构准则和能力进行映射。
-    3.  场景映射：将高可用能力和标类场景进行映射。
-    4.  演练执行：通过上述步骤明确系统稳定性要求，找出有针对性的故障演练然后通过流程化的故障演练引导您执行推荐的故障演练任务。
-    5.  故障演练报告：故障演练任务完成后，以故障演练报告总结故障演练结果。
+    故障演练可适用于以下典型场景：
 
-![故障演练](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/ex_fault_testing.png "故障演练")
+    -   衡量微服务的容错能力
+    -   验证容器编排配置是否合理
+    -   测试 PaaS 层是否健壮
+    -   验证监控告警的时效性
+    -   定位与解决问题的应急能力
+    更多信息，参见[故障演练概述](../intl.zh-CN/故障演练/故障演练概述.md#)。
+
 
 ## 流控降级 {#section_wkt_xwb_kgb .section}
 
