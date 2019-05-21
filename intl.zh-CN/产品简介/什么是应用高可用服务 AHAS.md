@@ -24,11 +24,15 @@
 
 -   **数据源**
 
-    AHAS 支持的数据源如下表所示。
+    [图 1](#d7e140) 展示了 AHAS 支持的数据源。
 
-    ![AHAS 支持的数据源](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_data_sources.png "AHAS 支持的数据源")
+    ![](../DNAHAS19100099/images/47645_zh-CN.png "AHAS 支持的数据源")
 
 -   **工作流程**
+
+    [图 2](#d7e158) 展示了 AHAS 架构感知的工作流程。
+
+    ![](../DNAHAS19100099/images/47647_zh-CN.png "架构感知工作流程")
 
     AHAS 架构感知的工作流程包括四个步骤：
 
@@ -36,24 +40,22 @@
     2.  关系构建
     3.  特征识别
     4.  架构可视化
-    ![架构感知工作流程](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_arch_detect_workflow.png "架构感知工作流程")
-
 -   **界面展现**
 
-    ![架构感知](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/ex_arch_visulization.png "架构可视化")
+    ![](../DNAHAS19100099/images/47661_zh-CN.png "架构可视化")
 
 
-## 故障演练 {#section_zxh_gd3_hhb .section}
+## 故障演练 { .section}
 
 故障演练是一款遵循混沌工程实验原理并融合了阿里巴巴内部实践的产品，提供丰富故障场景实现，能够帮助分布式系统提升容错性和可恢复性。
 
--   **流程**
+-   **流程** 
 
     故障演练建立了一套标准的演练流程，包含准备阶段、执行阶段、检查阶段和恢复阶段。通过四阶段的流程，覆盖用户从计划到还原的完整演练过程，并通过可视化的方式清晰的呈现给用户。
 
-    ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_chaos_process.png) 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92853/155842680047684_zh-CN.png)
 
--   **适用场景**
+-   **适用场景** 
 
     故障演练可适用于以下典型场景：
 
@@ -75,10 +77,10 @@
 
     流控降级模块支持主流的 Java 框架，包括 HTTP 和 Dubbo。该模块可以实时监控框架的 QPS（Queries per Second，每秒查询数）、线程数、响应时间、异常数等指标，并有选择地截断对这些框架的访问，从而保护应用的可用性。此外，利用 AHAS 提供的 SDK，您还可以采取更细粒度的代码级限流降级防护措施。
 
-    ![流控降级工作流程](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/dg_safeguarding_workflow.png "流控降级工作流程")
+    ![](../DNAHAS19100099/images/47664_zh-CN.png "流控降级工作流程")
 
 
-![流控降级界面](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/pg_safeguarding.png "流控降级")
+![](../DNAHAS19100099/images/47667_zh-CN.png "流控降级")
 
 ## AHAS 使用场景 {#section_bz2_htv_1fb .section}
 
