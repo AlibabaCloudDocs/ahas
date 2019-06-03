@@ -13,7 +13,7 @@
     -   **查看具体分层**：单击拓扑图左上角的 **Pod**、**Deployment**和 **Service**，可查看具体分层视图。
     -   **筛选**：在拓扑图上方的下拉列表中，可根据特定的 Kubernetes 集群、命名空间、状态等进行筛选。
     -   **切换至表格视图**：单击拓扑图右上角的**拓扑图**开关图标，可切换至表格视图。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117706/155506495844340_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117706/155955557344340_zh-CN.png)
 
 3.  在拓扑图上，单击某个图标，可查看对应的 Pod、Deployment 或 Service 的详情和具体拓扑图。
 
@@ -70,7 +70,7 @@
 |入口连接|调用该 Deployment 的所有组件及其端口；通过拓扑图中连接线的箭头方向可判断组件之间的调用关系。|
 |出口连接|该 Deployment 调用的所有组件及其端口；通过拓扑图中连接线的箭头方向可判断组件之间的调用关系。|
 
-## Service 详情说明 { .section}
+## Service 详情说明 {#section_de1_u4p_w4k .section}
 
 容器组中的 Service 详情说明见下表（具体字段以实际接入的应用资源为准）。
 
