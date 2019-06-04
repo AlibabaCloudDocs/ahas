@@ -19,7 +19,7 @@
 3.  （可选）每个地域会有一个默认（Default）环境，您也可以添加自定义环境，如开发环境、测试环境等。
     1.  单击概览页面左上角的下拉列表，单击**添加环境**。
 
-        ![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/ahas/sc_env_selection.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92853/155961446747674_zh-CN.png)
 
     2.  填写环境名称，单击**确定**。添加完成后，即可以在刚刚添加的环境中进行操作。
 
@@ -33,13 +33,13 @@
 1.  在 AHAS 控制台左侧导航栏，选择**探针管理**，单击页面右上角的**安装架构感知探针**。
 2.  在**选择环境**页签下，单击**阿里云 ECS** 作为您要安装的环境。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92853/155955544747676_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92853/155961446847676_zh-CN.png)
 
 3.  在**安装应用高可用探针**页签下，列出了您账号下所有的 ECS 主机。按需执行以下操作之一，然后单击**下一步**。
 
     -   如需为单台主机安装探针，请单击右侧**操作**栏中的**单击安装**。
     -   如需为多台主机批量安装探针，请勾选目标主机左侧的复选框，并在页面左下角单击**批量安装**。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92853/155955544747677_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92853/155961446847677_zh-CN.png)
 
 4.  单击**下一步**，查看已安装的探针。
 5.  单击**完成**。
