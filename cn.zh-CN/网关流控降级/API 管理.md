@@ -13,7 +13,7 @@
 5.  在左侧导航栏，选择 **API 管理**。单击右上角的**新增**按钮。
 6.  在**新建自定义 API** 对话框中，填写 API 分组名称。该名称需要全局唯一，并且不能与路由配置文件中的路由 ID 重复。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/217940/155782720347148_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/217940/155842206247148_zh-CN.png)
 
 7.  填写 URL 路径匹配规则，先选择匹配模式，再根据匹配模式的要求填写匹配串。
     -   **匹配模式**分为以下三类：
@@ -26,7 +26,7 @@
 
     新增的 API 将出现在 API 管理页面。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/217940/155782720347151_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/217940/155842206247151_zh-CN.png)
 
 
 ## 后续操作 {#section_17t_0vi_lsm .section}
@@ -41,6 +41,6 @@
     2.  在提示框中，单击**确定**，将该 API 分组删除。
 -   **设置流控规则** 
 
-    参见[网关流控规则](intl.zh-CN/流控降级/控制台指南/网关流控/网关流控规则.md#)。
+    参见[网关流控规则](intl.zh-CN/网关流控降级/网关流控规则.md#)。
 
 
