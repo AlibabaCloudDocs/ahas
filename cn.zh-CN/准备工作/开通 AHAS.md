@@ -1,6 +1,6 @@
 # 开通 AHAS {#concept_ivm_ndp_1fb .concept}
 
-您可免费开通并使用应用高可用服务（Application High Availability Service，简称 AHAS）。
+本文为您介绍如何开通应用高可用服务（Application High Availability Service，简称 AHAS）。
 
 ## 前提条件 {#section_irf_rrq_bfb .section}
 
