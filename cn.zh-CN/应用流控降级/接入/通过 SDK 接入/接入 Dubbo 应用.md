@@ -1,6 +1,6 @@
 # 接入 Dubbo 应用 {#concept_gz5_d3c_kgb .concept}
 
-Dubbo 应用可以通过 Java SDK 方式 AHAS 应用流控降级。本文将帮助您了解如何使用 SDK 方式将 Dubbo 应用接入应用流控降级。
+将 Dubbo 应用接入 AHAS 应用流控降级后，可以对其配置流控、降级和系统规则来保证系统稳定性。本文将帮助您了解如何使用 SDK 方式将 Dubbo 应用接入应用流控降级。
 
 ## 操作步骤 {#section_ry5_m4d_bhb .section}
 
@@ -10,7 +10,7 @@ Dubbo 应用可以通过 Java SDK 方式 AHAS 应用流控降级。本文将帮�
 
     在Dubbo 应用接入 页面查看 Pom 依赖最新版本和 license 信息（非公网地域中不需要）。
 
-    ![Dubbo 应用接入](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92287/156775225358999_zh-CN.png)
+    ![Dubbo 应用接入](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92287/156775564158999_zh-CN.png)
 
 4.  选择以下任意一种方式，在 Dubbo 应用中添加应用流控降级依赖。
     -   在 Dubbo 应用的 Pom 文件中添加以下依赖：
@@ -50,6 +50,10 @@ Dubbo 应用可以通过 Java SDK 方式 AHAS 应用流控降级。本文将帮�
             **说明：** 在Dubbo 应用接入页签查看 Pom 依赖最新版本，将 `x.y.z` 替换为新版本的版本号。
 
         2.  在 application.properties 配置文件中，配置如下：
+6.  （可选）您可以自定义 Dubbo 应用触发限流/降级/系统保护规则时的 fallback 处理逻辑，自定义的 [`DubboFallback`](https://github.com/alibaba/Sentinel/blob/master/sentinel-adapter/sentinel-dubbo-adapter/src/main/java/com/alibaba/csp/sentinel/adapter/dubbo/fallback/DubboFallback.java) 接口并通过 `DubboFallbackRegistry` 注册即可。配置后，当 Dubbo 应用被限流/降级/系统保护时，AHAS 会将 `BlockException` 包装后抛出。详情请参见[Dubbo Adapter](cn.zh-CN/应用流控降级/开发指南/Java SDK 参考/配置流控逻辑.md#section_rgg_4vj_kgb)。
+
+    **说明：** 若未执行此步骤，当 Dubbo 应用触发流控降级规则时，默认抛出 `BlockException` 异常类的子类（触发流控规则，则抛出流控异常 `FlowException`；触发降级规则，则抛出降级异常 `DegradeException`）。
+
 
 ## 结果验证 {#section_j74_bjp_ap0 .section}
 
@@ -62,6 +66,4 @@ Dubbo 应用可以通过 Java SDK 方式 AHAS 应用流控降级。本文将帮�
 -   [流控规则](cn.zh-CN/应用流控降级/控制台指南/流控规则.md#)
 -   [降级规则](cn.zh-CN/应用流控降级/控制台指南/降级规则.md#)
 -   [系统规则](cn.zh-CN/应用流控降级/控制台指南/系统规则.md#)
-
-您可以自定义 Dubbo 应用被限流/降级/系统保护时的 fallback 处理逻辑，自定义的 [`DubboFallback`](https://github.com/alibaba/Sentinel/blob/master/sentinel-adapter/sentinel-dubbo-adapter/src/main/java/com/alibaba/csp/sentinel/adapter/dubbo/fallback/DubboFallback.java) 接口并通过 `DubboFallbackRegistry` 注册即可。配置后，当 Dubbo 应用被限流/降级/系统保护时，AHAS 会将 `BlockException` 包装后抛出。详情请参见[Dubbo Adapter](cn.zh-CN/应用流控降级/开发指南/Java SDK 参考/配置流控逻辑.md#section_rgg_4vj_kgb)。
 
