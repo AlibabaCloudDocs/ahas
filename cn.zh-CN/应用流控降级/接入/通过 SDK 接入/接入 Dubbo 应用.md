@@ -10,7 +10,7 @@
 
     在Dubbo 应用接入 页面查看 Pom 依赖最新版本和 license 信息（非公网地域中不需要）。
 
-    ![Dubbo 应用接入](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92287/156775646458999_zh-CN.png)
+    ![Dubbo 应用接入](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92287/156871918358999_zh-CN.png)
 
 4.  选择以下任意一种方式，在 Dubbo 应用中添加应用流控降级依赖。
     -   在 Dubbo 应用的 Pom 文件中添加以下依赖：
@@ -41,7 +41,7 @@
             ``` {#codeblock_01f_8wm_1rq}
             <dependency>
               <groupId>com.alibaba.csp</groupId>
-              <artifactId>ahas-sentinel-client</artifactId>
+              <artifactId>spring-boot-starter-ahas-sentinel-client</artifactId>
               <!-- 可指定版本号，最新版本见 AHAS 控制台流控降级应用接入页引导。 -->
               <version>x.y.z</version>
             </dependency>
@@ -50,14 +50,14 @@
             **说明：** 在Dubbo 应用接入页签查看 Pom 依赖最新版本，将 `x.y.z` 替换为新版本的版本号。
 
         2.  在 application.properties 配置文件中，配置如下：
-6.  （可选）您可以自定义 Dubbo 应用触发限流/降级/系统保护规则时的 fallback 处理逻辑，自定义的 [`DubboFallback`](https://github.com/alibaba/Sentinel/blob/master/sentinel-adapter/sentinel-dubbo-adapter/src/main/java/com/alibaba/csp/sentinel/adapter/dubbo/fallback/DubboFallback.java) 接口并通过 `DubboFallbackRegistry` 注册即可。配置后，当 Dubbo 应用被限流/降级/系统保护时，AHAS 会将 `BlockException` 包装后抛出。详情请参见[Dubbo Adapter](intl.zh-CN/应用流控降级/开发指南/Java SDK 参考/配置流控逻辑.md#section_rgg_4vj_kgb)。
+6.  （可选）您可以自定义 Dubbo 应用触发限流、降级或系统保护规则时的 fallback 处理逻辑，自定义[`DubboFallback`](https://github.com/alibaba/Sentinel/blob/master/sentinel-adapter/sentinel-dubbo-adapter/src/main/java/com/alibaba/csp/sentinel/adapter/dubbo/fallback/DubboFallback.java) 接口并通过 `DubboFallbackRegistry` 注册即可。配置后，当 Dubbo 应用被限流/降级/系统保护时，AHAS 会将 `BlockException` 包装后抛出。详情请参见[Dubbo Adapter](intl.zh-CN/应用流控降级/开发指南/配置流控逻辑.md#section_rgg_4vj_kgb)。
 
     **说明：** 若未执行此步骤，当 Dubbo 应用触发流控降级规则时，默认抛出 `BlockException` 异常类的子类（触发流控规则，则抛出流控异常 `FlowException`；触发降级规则，则抛出降级异常 `DegradeException`）。
 
 
 ## 结果验证 {#section_j74_bjp_ap0 .section}
 
-在Dubbo 应用接入页签右下角单击**我已完成上述步骤**，即可返回应用列表页面。若您的应用在应用列表中且有数据上报，则说明接入成功。
+启动应用并调用配置埋点的方法。若该应用出现在 AHAS 控制台**流控降级** \> **应用流控**页面，且在该应用的监控详情页面有能看到配置埋点的方法，则说明接入成功。
 
 ## 后续操作 {#section_vw0_tp4_rut .section}
 
