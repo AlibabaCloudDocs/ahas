@@ -22,7 +22,7 @@
 |--|--|---|--|
 |Code|String|200|返回码 |
 |Data|Struct| |返回数据 |
-|AppName|String|ahas-demo|应用名 |
+|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
 |InnerMetrics|Array of InnerMetrics| |应用监控metrics数据 |
 |BlockedQps|Float|173|集群接口限流QPS |
 |BlockedQpsAvg|Float|86|接口限流QPS平均值 |
