@@ -74,5 +74,4 @@ AHAS API的服务接入地址。不同地域的接入地址如下表所示。
 |华北2（北京）|cn-beijing|ahas.cn-beijing.aliyuncs.com|
 |华北3（张家口）|cn-zhangjiakou|ahas.cn-zhangjiakou.aliyuncs.com|
 |华南1（深圳）|cn-shenzhen|ahas.cn-shenzhen.aliyuncs.com|
-|公网|public|ahas.aliyuncs.com|
 
