@@ -40,13 +40,11 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
     |CentOS 6|nginx-1.10.3|lib/centos6-nginx-1.10.3/ngx\_sentinel\_module.so|
     |CentOS 7|nginx-1.16.1|lib/centos7-nginx-1.16.1/ngx\_sentinel\_module.so|
 
-    如果您使用其他Nginx版本，请您提供操作系统版本和Nginx -V的输出，以便为您提供预编译的Nginx模块。
-
-    CentOS 7下Nginx默认自动从/usr/share/nginx/modules/目录下的`*.conf`文件加载动态模块配置。因此也可以新建一个/usr/share/nginx/modules/mod-sentinel.conf配置文件，内容与上述Sentinel模块配置相同即可，这样不用修改Nginx主配置文件即可添加Sentinel模块配置。
+    如果您使用其他Nginx版本，请您提供操作系统版本和`Nginx -V`（大写的V）的完整输出文本，以便为您提供预编译的Nginx模块。
 
 5.  配置完成后，执行`sudo nginx -t`命令检查Nginx的配置文件和动态模块。
 
-    除了上述核心配置外，还可以使用`sentinel_block_action`等指令控制Nginx Sentinel流控行为，详情请参见[Nginx Sentinel模块配置](/cn.zh-CN/网关防护/SDK使用手册/Nginx Sentinel模块配置.md)。
+    除了上述核心配置外，还可以使用`sentinel_block_action`等指令控制Nginx Sentinel流控行为，详情请参见[Nginx Sentinel模块配置](/cn.zh-CN/Nginx防护/Nginx Sentinel模块配置.md)。
 
 6.  重启Nginx，即完成接入AHAS流量防护。
 
@@ -82,7 +80,7 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 ## 相关文档
 
-Nginx Sentinel详细配置文档请参见[Nginx Sentinel模块配置](/cn.zh-CN/网关防护/SDK使用手册/Nginx Sentinel模块配置.md)。
+Nginx Sentinel详细配置文档请参见[Nginx Sentinel模块配置](/cn.zh-CN/Nginx防护/Nginx Sentinel模块配置.md)。
 
 
 
