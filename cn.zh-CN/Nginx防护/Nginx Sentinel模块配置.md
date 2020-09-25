@@ -32,14 +32,14 @@ sudo tar xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
 
     **说明：** 由于Nginx自身限制，预编译动态模块与Nginx版本及编译配置项绑定。升级Nginx版本时必须同时更新预编译动态模块。
 
-    如果Sentinel Sidecar安装包未包含您使用的Nginx版本，请提供您的操作系统版本和`Nginx -V`输出，以便为您提供预编译Nginx模块。
+    如果Sentinel Sidecar安装包未包含您使用的Nginx版本，请提供您的操作系统版本和`Nginx -V`（大写的V）的完整输出文本，以便为您提供预编译Nginx模块。
 
 -   **Nginx Sentinel模块初始化sentinel\_init**
 
     -   语法：`sentinel_init sidecar unix:<path> | <address>:<port>;`
-    -   默认值：`sentinel_init sidecar unix:/tmp/sentinel-sidecar.sock;`
+    -   默认值：无
     -   配置上下文：`main`
-    使用`sentinel_init`指令配置Nginx Sentinel模块初始化参数，即配置Sentinel Sidecar的监听地址，通常使用默认配置即可，示例配置如下。
+    使用`sentinel_init`指令配置Nginx Sentinel模块初始化参数，即配置Sentinel Sidecar的监听地址，示例配置如下。
 
     ```
     sentinel_init sidecar unix:/tmp/sentinel-sidecar.sock;
