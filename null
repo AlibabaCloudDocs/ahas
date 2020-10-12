@@ -1,19 +1,8 @@
----
-keyword: [切换region, 切换地域, 公网]
----
+# 如何结束 AHAS Agent 进程？
 
-# 如何切换地域（Region）？
+AHAS 为应用高可用探针（即 AHAS Agent）提供进程自动拉起功能，即定时检查 AHAS Agent 进程是否存在，如不存在，自动拉起该进程。这一功能保证了进程可用性，避免进程因异常挂掉或机器重启等原因，需要手动拉起的情况。
 
-AHAS实例按地域（Region）划分，在日常操作维护中，您可能因机器在不同的地域而需要切换控制台中的地域（Region），本文介绍在AHAS控制台如何切换地域（Region）。
+所以，您在服务器进程中结束 AHAS Agent 无法永久结束该进程，AHAS 会在定时检查后或机器重启时，自动拉起该进程。
 
-## 操作步骤
-
-1.  登录[AHAS控制台](https://ahas.console.aliyun.com)。
-
-2.  单击控制台左上方的地域，在列表中选择所需的地域（Region）。
-
-    -   如果您有阿里云北京、杭州、上海或深圳等地VPC的机器，可以选择对应的地域（Region）。
-    -   如果不属于第一种情况，可选择**公网**。
-    ![region](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/6621881951/p110988.png)
-
+如果您某段时间不需要使用 AHAS Agent，建议您登录[AHAS 控制台](https://ahas.console.aliyun.com)，在**管理**页面卸载 AHAS Agent。
 
