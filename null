@@ -1,21 +1,19 @@
 ---
-keyword: [阿里云账号, 账号UID, 账号ID]
+keyword: [切换region, 切换地域, 公网]
 ---
 
-# 如何查看阿里云账号UID？
+# 如何切换地域（Region）？
 
-在AHAS的日常操作或维护中，系统可能会需要您提供阿里云账号UID。本文介绍如何查看您的阿里云账号UID。
+AHAS实例按地域（Region）划分，在日常操作维护中，您可能因机器在不同的地域而需要切换控制台中的地域（Region），本文介绍在AHAS控制台如何切换地域（Region）。
 
 ## 操作步骤
 
 1.  登录[AHAS控制台](https://ahas.console.aliyun.com)。
 
-2.  单击控制台页面右上角的头像，进入账号管理页面。
+2.  单击控制台左上方的地域，在列表中选择所需的地域（Region）。
 
-    ![头像](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2431881951/p110979.png)
-
-3.  在左侧导航栏选择**安全设置**，进入安全设置页面。页面中的**账号ID**即所需的账号UID。
-
-    ![账号UID](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2431881951/p110977.png)
+    -   如果您有阿里云北京、杭州、上海或深圳等地VPC的机器，可以选择对应的地域（Region）。
+    -   如果不属于第一种情况，可选择**公网**。
+    ![region](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/6621881951/p110988.png)
 
 
