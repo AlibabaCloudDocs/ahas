@@ -8,7 +8,7 @@ MSHA功能目前处于公测阶段，如果您需要试用MSHA产品，请提交
 
 ## 申请开通MSHA
 
-多活容灾MSHA（Multi-Site High Availability），是在阿⾥巴巴电商业务环境演进出来的多活容灾架构解决⽅案，可以将业务恢复和故障恢复解耦，有基于灵活的规则调度、跨域跨云管控、数据保护等能力，保障故障场景下的业务快速恢复，助⼒企业的容灾稳定性建设。MSHA功能目前处于公测阶段，如果您需要试用MSHA产品，体验同城异地多活的产品解决方案，请前往[申请页面](https://selfservice.console.aliyun.com/ticket/category/ahas/recommend/4878)单击**创建工单**开通MSHA。
+多活容灾MSHA（Multi-Site High Availability），是在阿⾥巴巴电商业务环境演进出来的多活容灾架构解决⽅案，可以将业务恢复和故障恢复解耦，有基于灵活的规则调度、跨域跨云管控、数据保护等能力，保障故障场景下的业务快速恢复，助⼒企业的容灾稳定性建设。MSHA功能目前处于公测阶段，如果您需要试用MSHA产品，体验同城异地多活的产品解决方案，请前往[申请页面](https://selfservice.console.aliyun.com/ticket/category/ahas/recommend/5648)单击**创建工单**开通MSHA。
 
 在提交工单页面您需要注意填写以下内容：
 
