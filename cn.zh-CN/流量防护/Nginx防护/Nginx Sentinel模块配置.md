@@ -74,7 +74,7 @@ sudo tar xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
 
 -   **限流行为sentinel\_block\_action**
 
-    -   语法：`sentinel_block_action off | dry_run | =code;`
+    -   语法：`sentinel_block_action off | =code;`
     -   默认值：`sentinel_block_action =503;`
     -   配置上下文：`http`，`server`，`location`
     Nginx添加Sentinel模块后，可使用`sentinel_block_action`指令配置限流行为。默认配置为`sentinel_block_action =503;`，即触发限流时Nginx立即返回`HTTP 503`错误码。`sentinel_block_action`指令可分别在Nginx配置文件的http/server/location配置上下文进行配置。
@@ -87,7 +87,6 @@ sudo tar xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
     `sentinel_block_action`指令支持如下配置项：
 
     -   `off`：关闭Sentinel流控检查，即不使用Sentinel模块，直接放行所有请求。
-    -   `dry_run`：执行流控检查，AHAS控制台可看到流量监控，但不会真正拦截请求，直接放行所有请求。
     -   `=code`：执行流控检查并执行限流拦截，触发限流时Nginx立即返回指定的HTTP错误码，拒绝处理或转发此请求。
 -   **限流日志级别sentinel\_block\_log\_level**
 
@@ -96,8 +95,8 @@ sudo tar xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
     -   配置上下文：`http`，`server`，`location`
     Sentinel流控检查触发限流时，使用`sentinel_block_log_level`指令配置限流日志的严重级别。
 
-    **说明：** 当限流日志的严重级别比[error\_log](http://nginx.org/en/docs/ngx_core_module.html#error_log)指令配置的严重级别低时，将不会打印限流日志。error\_log默认级别为error，限流日志默认级别为warn ，即默认不会打印限流日志。
+    **说明：** 如果限流日志的严重级别比[error\_log](http://nginx.org/en/docs/ngx_core_module.html#error_log)指令配置的严重级别低，则不会打印限流日志。error\_log默认级别为error，限流日志默认级别为info，即默认不打印限流日志。
 
-    [AHAS控制台](https://ahas.console.aliyun.com)可以更直观清晰的查看流量监控，通常不需要打印限流日志。限流日志通常仅用于开发测试。限流日志默认为warn级别。如果error\_log配置的日志严重级别等于或低于warn时，可降低限流日志的严重级别（如设置为debug）以避免打印限流日志。
+    [AHAS控制台](https://ahas.console.aliyun.com)可以更直观清晰的查看流量监控，通常不需要打印限流日志（限流日志通常仅用于开发测试）。限流日志默认为info级别。如果error\_log配置的日志严重级别等于或低于info时，可降低限流日志的严重级别（如设置为debug）以避免打印限流日志。
 
 
