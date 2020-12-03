@@ -91,7 +91,7 @@ sudo tar xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
 -   **限流日志级别sentinel\_block\_log\_level**
 
     -   语法：`sentinel_block_log_level debug | info | notice | warn | error;`
-    -   默认值：`sentinel_block_log_level warn;`
+    -   默认值：`sentinel_block_log_level info;`
     -   配置上下文：`http`，`server`，`location`
     Sentinel流控检查触发限流时，使用`sentinel_block_log_level`指令配置限流日志的严重级别。
 
