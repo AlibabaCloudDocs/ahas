@@ -1,20 +1,20 @@
 ---
-keyword: [Nginx Sentinel, AHAS Sentinel Sidecar, 网关防护]
+keyword: [Nginx Sentinel, AHAS Sentinel Sidecar, Nginx防护]
 ---
 
 # 接入Nginx
 
-Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以快速接入到AHAS网关防护中。当有请求流量时，您可以在网关防护中查看Nginx网关请求的实时QPS和RT等数据。本文介绍在AHAS网关防护中如何接入Nginx和Nginx Demo。
+Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以快速接入到AHAS中。当有请求流量时，您可以在Nginx防护中查看Nginx网关请求的实时QPS和RT等数据。本文介绍如何接入Nginx防护。
 
 ## 接入Nginx
 
 1.  登录[AHAS控制台](https://ahas.console.aliyun.com)，然后在页面左上角选择**地域**。
 
-2.  在控制台左侧导航栏中选择**流量防护** \> **Nginx防护**。
+2.  在控制台左侧导航栏中选择**流量防护** \> **Nginx防护**，然后单击**Nginx接入**。
 
 3.  单击**接入**页签，按需选择以下任意一种方式下载AHAS Sentinel Sidecar。
 
-    -   单击**Nginx**页面的**点击此处链接下载**，下载AHAS Sentinel Sidecar并用`tar`命令解压到本地。
+    -   单击**Nginx防护**页面的**点击此处链接下载**，下载AHAS Sentinel Sidecar并用`tar`命令解压到本地。
 
         **说明：** 目前仅支持Linux 64位环境。
 
@@ -31,7 +31,10 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
     -   上述第三行配置`sentinel_sidecar_run`为启动Sentinel Sidecar的命令行参数。
     -   其中`--app=${AppName}`参数配置应用名，在阿里云VPC环境下配置应用名即可自动接入AHAS控制台。
-    -   如果在公网环境下测试，还需要添加`--license=<license>`参数进行公网接入认证，详情请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。License是机密信息，请注意保密！
+    -   如果在公网环境下测试，还需要添加`--license=<license>`参数进行公网接入认证，具体操作，请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。
+
+        **说明：** License是机密信息，请注意保密！
+
     Nginx自身限制预编译动态模块与Nginx可执行文件版本和编译配置绑定。目前默认提供以下主流GNU/Linux 64位系统和Nginx版本的预编译动态模块，位于安装目录的lib/<os\>-nginx-<version\>/子目录下。
 
     |操作系统|Nginx版本|动态模块路径|
@@ -61,7 +64,7 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 1.  登录[AHAS控制台](https://ahas.console.aliyun.com)，然后在页面左上角选择**地域**。
 
-2.  在控制台左侧导航栏中选择**流量防护** \> **Nginx防护**。
+2.  在控制台左侧导航栏中选择**流量防护** \> **Nginx防护**，然后单击**Nginx接入**。
 
 3.  单击体验Demo页签，然后单击**点击此处链接下载**，下载AHAS Sentinel Sidecar并用`tar`命令解压到本地。
 
@@ -69,7 +72,9 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 4.  在Sentinel Sidecar安装目录的demo/子目录下，执行以下命令快速启动Demo Nginx。
 
-    公网环境下，`xxlicensexx`请替换为您的真实License。详情请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。License是机密信息，请注意保密！
+    公网环境下，`xxlicensexx`请替换为您的真实License。具体操作，请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。
+
+    **说明：** License是机密信息，请注意保密！
 
     **验证结果**
 
@@ -80,7 +85,7 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 ## 相关文档
 
-Nginx Sentinel详细配置文档请参见[Nginx Sentinel模块配置](/cn.zh-CN/流量防护/Nginx防护/Nginx Sentinel模块配置.md)。
+Nginx Sentinel详细配置文档，请参见[Nginx Sentinel模块配置](/cn.zh-CN/流量防护/Nginx防护/Nginx Sentinel模块配置.md)。
 
 
 
