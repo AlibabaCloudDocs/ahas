@@ -21,7 +21,7 @@
 <dependency>
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-ahas-openapi</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.4</version>
 </dependency>
 ```
 
@@ -39,16 +39,17 @@ import com.aliyuncs.profile.DefaultProfile;
 
 public class ListFlowRuleDemo {
     public static void main(String[] args){
-        String regionId = "cn-hangzhou"; //执行API调用的应用所在地域ID
-        String accessKey = "**************"; //阿里云主账号或子账号的AccessKey ID
-        String accessSecret = "**************"; //阿里云主账号或子账号的AccessKey Secret
-        String appName = "ahas-demo"; //所要查询的应用名
-        String namespace = "default"; //应用所在的命名空间
+        String regionId = "cn-hangzhou"; //执行API调用的应用所在地域ID。
+        String accessKey = "**************"; //阿里云主账号或子账号的AccessKey ID。
+        String accessSecret = "**************"; //阿里云主账号或子账号的AccessKey Secret。
+        String appName = "ahas-demo"; //所要查询的应用名。
+        String namespace = "default"; //应用所在的命名空间。
 
         DefaultProfile profile = DefaultProfile.getProfile(regionId, accessKey, accessSecret);
         IAcsClient client = new DefaultAcsClient(profile);
         ListFlowRulesOfAppRequest request = new ListFlowRulesOfAppRequest();
-
+        //公网调用openAPI需要额外设置ahasRegionId=public，其他region请勿设置！！！
+        request.setAhasRegionId("public");
         request.setAppName(appName);
         request.setNamespace(namespace);
         try{
@@ -74,4 +75,5 @@ AHAS API的服务接入地址。不同地域的接入地址如下表所示。
 |华北2（北京）|cn-beijing|ahas.cn-beijing.aliyuncs.com|
 |华北3（张家口）|cn-zhangjiakou|ahas.cn-zhangjiakou.aliyuncs.com|
 |华南1（深圳）|cn-shenzhen|ahas.cn-shenzhen.aliyuncs.com|
+|公网|cn-hangzhou|ahas.cn-hangzhou.aliyuncs.com|
 
