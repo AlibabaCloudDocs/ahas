@@ -18,13 +18,11 @@ MSHA功能目前处于公测阶段，如果您需要试用MSHA产品，请提交
 -   在**问题描述**中需要填写您期望试用MSHA解决的问题。
 -   请确保您留下的个人信息（手机、邮箱等联系方式）正确，以便及时获取产品开通的服务信息。
 
-![创建工单](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/9386182061/p174078.png)
+![创建工单](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9386182061/p174078.png)
 
 ## 联系我们
 
-如果您在使用MSHA过程中有任何建议和疑问，欢迎扫描以下二维码加入钉钉群与我们交流。
+如果您在使用MSHA过程中有任何建议和疑问，欢迎您使用钉钉扫描下面的二维码或者搜索钉钉群号31623894加入钉钉群进行反馈。
 
-扫一扫钉钉群二维码，立即加入该群！
-
-![异地多活二维码](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/4136911061/p170718.jpg)
+![异地多活二维码](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9171389061/p170718.jpg)
 
