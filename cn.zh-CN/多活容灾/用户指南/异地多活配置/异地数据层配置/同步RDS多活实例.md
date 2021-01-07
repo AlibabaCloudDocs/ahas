@@ -7,15 +7,17 @@
 
 ## 步骤一：创建多活属性
 
-1.  登录[MSHA控制台](https://msha.console.aliyun.com)。
+1.  登录[AHAS控制台](https://ahas.console.aliyun.com)。
 
-2.  在控制台左侧导航栏选择**配置** \> **异地数据层配置**。
+2.  在控制台左侧导航栏中选择**多活容灾**。
 
-3.  在异地数据层配置页面选择**RDS**，并单击列表右侧的**配置多活属性**。
+3.  在控制台左侧导航栏选择**数据层配置** \> **异地数据层配置**。
 
-    ![RDS配置](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/5428716951/p86264.png)
+4.  在异地数据层配置页面选择**RDS**，并单击列表右侧的**配置多活属性**。
 
-4.  在**添加多活属性**面板中进行以下配置：
+    ![RDS配置](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5428716951/p86264.png)
+
+5.  在**添加多活属性**面板中进行以下配置：
 
     1.  选择**同步实例类型**。
 
@@ -35,7 +37,7 @@
 
     添加成功后，**RDS多活实例分组**区域未配置实例数将增加1。本示例以Copy类型为例。
 
-    ![RDS result ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/5428716951/p86272.png)
+    ![RDS result ](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5428716951/p86272.png)
 
     -   **未配置实例**：Copy、Unit多活实例分组没有配置同步链路的数量。
     -   **同步中实例**：Copy多活实例分组正向同步链路同步状态为同步中的数量，Unit多活实例分组正向同步链路和反向同步链路同步状态为同步中的数量。
@@ -43,9 +45,9 @@
 
 ## 步骤二：创建RDS同步链路
 
-1.  单击**创建同步链路**。
+1.  在异地数据层配置页面，单击**创建同步链路**。
 
-    ![RDS同步链路](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/5428716951/p102323.png)
+    ![RDS同步链路](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5428716951/p102323.png)
 
 2.  在**创建同步链路**页面进行以下配置。
 
@@ -89,5 +91,5 @@
 
 配置后，**RDS多活实例分组**区域同步中实例数将增加1。同步链路将显示在数据层配置页面，且同步状态为**同步中**。
 
-![RDS](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/5428716951/p87980.png)
+![RDS](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6202965061/p87980.png)
 
