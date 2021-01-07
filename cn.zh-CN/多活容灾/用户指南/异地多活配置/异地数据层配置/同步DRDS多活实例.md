@@ -6,15 +6,17 @@
 
 ## 步骤一：配置DRDS多活属性
 
-1.  登录[MSHA控制台](https://msha.console.aliyun.com)。
+1.  登录[AHAS控制台](https://ahas.console.aliyun.com)。
 
-2.  在控制台左侧导航栏选择**配置** \> **异地数据层配置**。
+2.  在控制台左侧导航栏中选择**多活容灾**。
 
-3.  在数据层配置页面选择**DRDS**，并单击列表右侧的**配置多活属性**。
+3.  在控制台左侧导航栏选择**数据层配置** \> **异地数据层配置**。
 
-    ![配置数据层](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8937911061/p169282.png)
+4.  在异地数据层配置页面选择**DRDS**，并单击列表右侧的**配置多活属性**。
 
-4.  在配置多活属性面板中进行以下配置：
+    ![配置数据层](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8937911061/p169282.png)
+
+5.  在配置多活属性面板中进行以下配置：
 
     1.  选择**同步实例类型**。
 
@@ -40,7 +42,7 @@
 
 ## 步骤二：创建DRDS同步链路
 
-1.  单击右上角的**创建同步链路**。
+1.  在异地数据层配置页面，单击右上角的**创建同步链路**。
 
 2.  在**创建同步链路**的**填写基本信息**页面进行以下配置。
 
@@ -84,7 +86,7 @@
 
 配置后，将进入预检查页面。预检查成功后，**DRDS多活实例分组**区域同步中实例数将增加1。同步链路将显示在数据层配置页面，且同步状态为**同步中**。
 
-![result](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/4428716951/p86092.png)
+![result](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4428716951/p86092.png)
 
 -   单击**操作**栏的**详情**查看该DRDS实例中的RDS同步信息。
 -   若无需使用该同步链路，可单击**操作**栏的**释放**，在弹出的对话框中，单击**确认**。
