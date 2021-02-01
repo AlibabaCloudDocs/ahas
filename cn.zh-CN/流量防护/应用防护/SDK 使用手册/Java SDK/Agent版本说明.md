@@ -8,6 +8,20 @@
 
 |版本号|发布时间|版本说明|
 |---|----|----|
+|1.8.4|2021年01月28日|-   新增主动降级规则，针对Servlet、Spring Web、Spring Cloud Gateway的主动降级规则支持配置自定义降级行为。
+-   完善MyBatis DAO埋点支持的场景。 |
+|1.8.3|2021年01月13日|-   修复HTTP状态码统计模块线程池满时抛出异常的问题。
+
+**说明：** 建议1.8.x旧版本至少升级至此版本。
+
+-   支持通过启动参数指定全局滑动窗口配置。 |
+|1.8.2|2021年01月09日|-   完善日志管理、清除逻辑。
+-   完善对Dubbo 2.7.x版本的支持（无需额外引入依赖）。 |
+|1.8.1|2020年12月23日|-   修复HTTP、状态码统计模块可能导致CPU被占满的问题。
+-   支持通过sentinel.properties文件配置AHAS license、namespace。 |
+|1.8.0|2020年12月16日|-   新增自动重试规则，新增SentinelWrapper托管调用埋点方式。目前SentinelWrapper埋点、注解埋点及HTTP Client适配支持自动重试规则。
+-   新增HTTP接口状态码统计，支持Spring Web、Spring Cloud Gateway、Zuul 1.x。
+-   新增指标统计，操作系统指标新增内存、网络、磁盘等指标种类；JVM指标新增GC、JVM内存、线程数等指标。 |
 |1.7.5|2020年12月07日|支持与AHAS Sentinel Java Agent同时使用，SDK在探测到Agent相关类存在时不会触发初始化，Web、MyBatis等相关适配模块不会重复生效。|
 |1.7.3|2020年11月03日|修复熔断降级模块在同资源配置多个规则时可能出现无法从half-open状态中恢复的问题。|
 |1.7.2|2020年10月20日|-   新增支持HSF适配模块，原生支持接入EDAS HSF服务。
@@ -62,6 +76,11 @@
 
 |版本|发布时间|版本说明|
 |--|----|----|
+|1.8.4|2021年01月28日|添加Feign埋点支持（支持Spring Cloud F/G/H三大版本体系）。|
+|1.8.3|2021年01月13日|特性对应ahas-sentinel-client 1.8.3。|
+|1.8.2|2021年01月09日|完善starter在application.properties动态配置场景下解析、更新配置的逻辑。|
+|1.8.1|2020年12月23日|完善starter配置解析逻辑以解决部分场景下启动顺序导致配置读不到的问题。|
+|1.8.0|2020年12月16日|特性对应ahas-sentinel-client 1.8.0。|
 |1.7.5|2020年12月08日|特性对应ahas-sentinel-client 1.7.5。|
 |1.7.3|2020年11月03日|特性对应ahas-sentinel-client 1.7.3。|
 |1.7.2|2020年10月20日|特性对应ahas-sentinel-client 1.7.2。|
@@ -92,6 +111,11 @@
 
 |版本号|版本说明|
 |---|----|
+|1.3.3|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.4版本，主动降级规则支持在控制台配置自定义fallback行为。|
+|1.3.2|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.3版本。|
+|1.3.1|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.2版本。|
+|1.3.0|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.1版本。|
+|1.2.4|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.0版本。|
 |1.2.3|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.7.5版本。|
 |1.2.2|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.7.3版本。|
 |1.2.1|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.7.1版本。|
@@ -108,7 +132,12 @@
 
 |版本号|版本说明|
 |---|----|
-|1.2.3|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.7.5版本。|
+|1.3.3|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.4版本。|
+|1.3.2|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.3版本。|
+|1.3.1|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.2版本。|
+|1.3.0|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.1版本。|
+|1.2.4|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.0版本。|
+|1.2.3|支持与AHAS Sentinel Java Agent同时使用，SDK在探测到Agent相关类存在时不会触发初始化，网关适配模块不会重复生效。|
 |1.2.2|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.7.3版本。|
 |1.2.1|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.7.1版本。|
 |1.1.7|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.6.3版本。|
