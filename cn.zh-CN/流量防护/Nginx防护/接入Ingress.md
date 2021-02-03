@@ -20,11 +20,11 @@ Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集
 
 3.  在集群管理页左侧导航栏中，选择**工作负载** \> **无状态**。
 
-4.  在无状态页面顶部选择**命名空间**为**kube-system**，在无状态列表单击**nginx-ingress-control****操作**列的**编辑**。
+4.  在无状态页面顶部选择**命名空间**为**kube-system**，在无状态列表单击**nginx-ingress-controller****操作**列的**编辑**。
 
     ![替换镜像.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7483522161/p237832.png)
 
-5.  在编辑页面，单击**nginx-ingress-control**页签，设置以下参数，然后单击**更新**。
+5.  在编辑页面，单击**nginx-ingress-controller**页签，设置以下参数，然后单击**更新**。
 
     1.  设置**镜像名称**为**registry.cn-hangzhou.aliyuncs.com/ahas/ahas-ingress-control**。
 
