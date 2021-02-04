@@ -22,7 +22,7 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
         ```
         curl -L -O https://ahasoss-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sidecar/latest/ahas-sentinel-sidecar-linux.tar.gz
-        sudo tar xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
+        sudo tar -xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
         ```
 
 4.  添加Nginx Sentinel模块配置。
@@ -40,7 +40,6 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
     |操作系统|Nginx版本|动态模块路径|
     |----|-------|------|
     |Ubuntu 18.04|nginx-1.14.0|lib/ubuntu-18.04-nginx-1.14.0/ngx\_sentinel\_module.so|
-    |CentOS 6|nginx-1.10.3|lib/centos6-nginx-1.10.3/ngx\_sentinel\_module.so|
     |CentOS 7|nginx-1.16.1|lib/centos7-nginx-1.16.1/ngx\_sentinel\_module.so|
 
     如果您使用其他Nginx版本，请您提供操作系统版本和`Nginx -V`（大写的V）的完整输出文本，以便为您提供预编译的Nginx模块。
