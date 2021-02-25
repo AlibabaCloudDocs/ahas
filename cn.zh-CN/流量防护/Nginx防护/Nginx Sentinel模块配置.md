@@ -81,7 +81,7 @@ sudo tar -xzf ahas-sentinel-sidecar-linux.tar.gz -C /opt/
 Nginx添加Sentinel模块后，可使用`sentinel_block_action`指令配置限流行为。默认配置为`sentinel_block_action =429;`，即触发限流时Nginx立即返回`HTTP 429`错误码。`sentinel_block_action`指令可分别在Nginx配置文件的http/server/location配置上下文进行配置。
 
 -   当客户端访问指定location下的URL请求时，如果该location未配置限流行为，则使用其所在server的配置。
--   如果server也未配置限流行为，则使用http下的配置。
+-   如果server也未配置限流行为，则使用HTTP下的配置。
 -   如果HTTP下也未配置，则使用内置默认配置，即返回`HTTP 429`错误码。
 
 如Nginx同时作为静态资源服务器和HTTP反向代理服务器时，静态资源不需要限流，可在HTTP主配置关闭sentinel流控检查，在需要限流的location下再按需开启流控功能。
