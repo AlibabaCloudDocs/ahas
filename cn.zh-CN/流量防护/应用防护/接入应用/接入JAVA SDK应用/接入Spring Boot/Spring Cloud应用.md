@@ -26,13 +26,16 @@ keyword: [流控, 接入, Spring Boot, SDK, Spring Cloud]
 
     在Spring Boot应用接入页面第一步：添加Pom依赖中查看Pom依赖最新版本，将`x.y.z`替换为新版本的版本号。
 
-    ![Spring boot version.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8633858951/p141609.png)
+    ![pom版本号.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9156725161/p246957.png)
 
 7.  在应用工程中添加埋点。
-    -   添加HTTP埋点： 引入spring-boot-starter-ahas-sentinel-client依赖后，应用会自动添加Web接口埋点。
+    -   添加HTTP埋点：引入spring-boot-starter-ahas-sentinel-client依赖后，应用会自动添加Web接口埋点。
 
-        **说明：** 若您从1.5.1之前的版本升级到1.5.1+版本，或额外引入了Web filter等的bean，需要先将之前注册bean的相关代码去掉，否则可能会导致重复统计。
+        **说明：**
 
+        -   若您从1.5.1之前的版本升级到1.5.1+版本，或额外引入了Web filter等的bean，需要先将之前注册bean的相关代码去掉，否则可能会导致重复统计。
+        -   注解方式blockHandler和fallback函数的方法签名有限制，具体信息，请参见[注解方式](/cn.zh-CN/流量防护/应用防护/SDK 使用手册/配置触发规则后的逻辑.mdsection_kgg_4vj_kgb)。
+        -   1.8.0及以上版本注解方式埋点支持自动重试规则。
     -   添加MyBatis SQL埋点：
         -   若您使用了MyBatis Spring Boot Starter，则引入AHAS依赖后会自动识别DAO埋点（需要spring-boot-starter-ahas-sentinel-client 1.5.1及以上版本）。
         -   若您未使用MyBatis Spring Boot Starter ，则需在MyBatis应用的XML配置文件中引入SentinelMyBatisMapperInterceptor拦截器依赖。
@@ -76,7 +79,7 @@ keyword: [流控, 接入, Spring Boot, SDK, Spring Cloud]
 
         若在公网地域，需要查看License信息。请在第三步：配置启动参数区域查看（非公网地域不需要），具体请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。
 
-        ![Spring boot license.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8633858951/p139532.png)
+        ![Spring boot license2.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9156725161/p246961.png)
 
 9.  您可以自定义Spring Boot应用触发限流、降级或系统保护规则时的处理逻辑。
 
