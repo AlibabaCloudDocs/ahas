@@ -21,16 +21,16 @@ SAE是面向应用的Serverless PaaS平台，能够帮助PaaS层用户免运维I
 4.  配置启动参数，添加JVM -D参数。
 
     ```
-    -Dahas.namespace=default -Dproject.name=AppName -Dahas.license=<your license>
+    -Dahas.namespace=default -Dproject.name=<AppName> -Dahas.license=<your license>
     ```
 
     注意事项如下：
 
-    -   `AppName`只能包含字母、数字、下划线（\_）、短划线（-）、英文句号（.）以及英文冒号（:）。
-    -   请将`AppName`参数替换成您的应用名。
+    -   `<AppName>`只能包含字母、数字、下划线（\_）、短划线（-）、英文句号（.）以及英文冒号（:）。
+    -   请将`<AppName>`参数替换成您的应用名。
     -   请将`<your license>`替换成应用防护控制台界面实际显示的license。
 
-        ![SAE license1.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3340968061/p204860.png)
+        ![SAE license2.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9556725161/p246949.png)
 
 
 ## 结果验证
