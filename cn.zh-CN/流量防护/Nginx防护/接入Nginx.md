@@ -10,11 +10,11 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 1.  登录[AHAS控制台](https://ahas.console.aliyun.com)，然后在页面左上角选择**地域**。
 
-2.  在控制台左侧导航栏中选择**流量防护** \> **Nginx防护**，然后单击**Nginx接入**。
+2.  在控制台左侧导航栏中选择**流量防护** \> **Ingress/Nginx防护**，然后单击**Ingress/Nginx接入**。
 
 3.  单击**接入**页签，按需选择以下任意一种方式下载AHAS Sentinel Sidecar。
 
-    -   单击**Nginx防护**页面的**点击此处链接下载**，下载AHAS Sentinel Sidecar并用`tar`命令解压到本地。
+    -   下载[AHAS Sentinel Sidecar](https://ahasoss-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sidecar/latest/ahas-sentinel-sidecar-linux.tar.gz?spm=5176.11961263.0.0.29193bc187RqTe&file=ahas-sentinel-sidecar-linux.tar.gz)，并用`tar`命令解压到本地。
 
         **说明：** 目前仅支持Linux 64位环境。
 
@@ -46,7 +46,7 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 5.  配置完成后，执行`sudo nginx -t`命令检查Nginx的配置文件和动态模块。
 
-    除了上述核心配置外，还可以使用`sentinel_block_action`等指令控制Nginx Sentinel流控行为，详情请参见[Nginx Sentinel模块配置](/cn.zh-CN/流量防护/Nginx防护/Nginx Sentinel模块配置.md)。
+    除了上述核心配置外，还可以使用`sentinel_block_action`等指令控制Nginx Sentinel流控行为，具体操作，请参见[Nginx Sentinel模块配置](/cn.zh-CN/流量防护/Nginx防护/Nginx Sentinel模块配置.md)。
 
 6.  重启Nginx，即完成接入AHAS流量防护。
 
@@ -63,9 +63,9 @@ Nginx是一款高性能开源的HTTP服务器，通过Nginx Sentinel模块可以
 
 1.  登录[AHAS控制台](https://ahas.console.aliyun.com)，然后在页面左上角选择**地域**。
 
-2.  在控制台左侧导航栏中选择**流量防护** \> **Nginx防护**，然后单击**Nginx接入**。
+2.  在控制台左侧导航栏中选择**流量防护** \> **Ingress/Nginx防护**，然后单击**Ingress/Nginx接入**。
 
-3.  单击体验Demo页签，然后单击**点击此处链接下载**，下载AHAS Sentinel Sidecar并用`tar`命令解压到本地。
+3.  下载[AHAS Sentinel Sidecar](https://ahasoss-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sidecar/latest/ahas-sentinel-sidecar-linux.tar.gz?spm=5176.11961263.0.0.29193bc187RqTe&file=ahas-sentinel-sidecar-linux.tar.gz)并用`tar`命令解压到本地。
 
     **说明：** 目前仅支持Linux 64位环境。
 
