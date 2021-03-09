@@ -57,7 +57,7 @@ keyword: [Go应用, SDK接入, 应用防护]
 
     若在公网地域，需要查看License信息。请在**GO语言**页签查看（非公网地域不需要），具体请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。
 
-    ![Go license](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0733858951/p139654.png)
+    ![GO license2.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0556725161/p247004.png)
 
 9.  重启您的应用。
 
@@ -130,8 +130,8 @@ keyword: [Go应用, SDK接入, 应用防护]
 
         **说明：**
 
-        -   若通过InitAhasFromFile\(path\)初始化AHAS，则会从path指定的YAML文件中读取配置项。
-        -   若通过InitAhasDefault\(\)初始化AHAS，则会尝试从SENTINEL\_CONFIG\_FILE\_PATH环境变量读取path并读取对应的文件。若未指定则默认从项目目录下的sentinel.yml文件读取配置。
+        -   若通过`InitAhasFromFile(path)`初始化AHAS，则会从path指定的YAML文件中读取配置项。
+        -   若通过`InitAhasDefault()`初始化AHAS，则会尝试从SENTINEL\_CONFIG\_FILE\_PATH环境变量读取path并读取对应的文件。若未指定则默认从项目目录下的sentinel.yml文件读取配置。
         -   若均不存在，AHAS则会通过环境变量读取基础的配置（如项目名称），其他配置项采用默认值。注意环境变量配置会覆盖配置文件的配置。
         |Key|对应的YAML配置项|含义|备注|
         |---|----------|--|--|
