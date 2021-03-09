@@ -65,11 +65,11 @@ Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集
 
     **说明：** 选择的地域要与步骤[1](#step_xlc_xlm_i3o)创建ACK集群的地域相同。
 
-2.  在[AHAS控制台](https://ahas.console.aliyun.com)左侧导航栏选择**流量防护** \> **Nginx防护**。
+2.  在[AHAS控制台](https://ahas.console.aliyun.com)左侧导航栏选择**流量防护** \> **Ingress/Nginx防护**。
 
-    在Nginx防护页面，可以看到在[容器服务管理控制台](https://cs.console.aliyun.com)创建的应用，说明该Ingress已接入AHAS。
+    在Ingress/Nginx防护页面，可以看到在[容器服务管理控制台](https://cs.console.aliyun.com)创建的应用，说明该Ingress已接入AHAS。
 
-    ![AHAS控制台.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8483522161/p237925.png)
+    ![AHAS控制台2.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0787725161/p247031.png)
 
 
 接入Ingress后，可以为其配置流控规则。具体操作，请参见[配置流控规则](/cn.zh-CN/流量防护/Nginx防护/配置流控规则.md)。
