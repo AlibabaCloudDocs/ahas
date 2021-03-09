@@ -24,7 +24,7 @@ keyword: [PHP应用, SDK接入, 应用防护]
 
     若在公网地域，需要查看License信息。请在**PHP语言**页签查看（非公网地域不需要），具体请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。
 
-    ![PHP license.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1733858951/p139655.png)
+    ![PHP license](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5556725161/p247007.png)
 
     停止应用后，可执行以下命令退出Sentinel Sidecar：
 
@@ -78,7 +78,7 @@ keyword: [PHP应用, SDK接入, 应用防护]
 PHP SDK目前支持流控规则、降级规则、隔离规则和系统规则：
 
 -   [配置流控规则](/cn.zh-CN/流量防护/应用防护/配置规则/配置流控规则.md)
--   [配置降级规则](/cn.zh-CN/流量防护/应用防护/配置规则/配置降级规则.md)
+-   [配置熔断规则](/cn.zh-CN/流量防护/应用防护/配置规则/配置熔断规则.md)
 -   [配置隔离规则](/cn.zh-CN/流量防护/应用防护/配置规则/配置隔离规则.md)
 -   [自适应流控](/cn.zh-CN/流量防护/应用防护/配置规则/自适应流控.md)
 
