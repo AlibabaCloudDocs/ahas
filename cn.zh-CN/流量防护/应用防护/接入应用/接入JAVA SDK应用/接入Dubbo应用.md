@@ -14,7 +14,7 @@ keyword: [Dubbo应用防护, JAVA SDK接入]
 4.  在应用防护页面右上角单击**新应用接入**。
 5.  在**JAVA语言**页签，单击**SDK接入**，然后单击**Dubbo应用接入**。
 6.  选择以下任意一种方式，在Dubbo应用中添加应用防护依赖。
-    -   在Dubbo应用的Pom文件中添加以下依赖（默认支持Dubbo 2.6.x版本）：
+    -   在Dubbo应用的pom.xml中添加以下依赖（默认支持Dubbo 2.6.x版本）：
 
         ```
         <dependency>
@@ -25,7 +25,7 @@ keyword: [Dubbo应用防护, JAVA SDK接入]
         </dependency>
         ```
 
-        在Dubbo应用接入页面第一步：添加Pom依赖中查看Pom依赖最新版本，将`x.y.z`替换为新版本的版本号。
+        在Dubbo应用接入页面查看pom依赖最新版本，将`x.y.z`替换为新版本的版本号。
 
         ![Dubbo版本号2.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8056725161/p246979.png)
 
