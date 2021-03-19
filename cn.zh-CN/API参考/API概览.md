@@ -141,4 +141,6 @@
 |[ListExperimentMetas](/cn.zh-CN/API参考/故障演练/ListExperimentMetas.md)|调用ListExperimentMetas接口分页查询演练列表。|
 |[GetExperimentTask](/cn.zh-CN/API参考/故障演练/GetExperimentTask.md)|调用GetExperimentTask接口查询故障演练任务详情。|
 |[GetActivityTask](/cn.zh-CN/API参考/故障演练/GetActivityTask.md)|调用GetActivityTask接口查询节点任务详情。|
+|[PageableQueryUserExperiment](/cn.zh-CN/API参考/故障演练/PageableQueryUserExperiment.md)|调用PageableQueryUserExperiment接口查询用户演练列表。|
+|[PageableQueryExperimentTaskByExperimentId](/cn.zh-CN/API参考/故障演练/PageableQueryExperimentTaskByExperimentId.md)|调用PageableQueryExperimentTaskByExperimentId接口根据演练ID分页查询演练任务。|
 
