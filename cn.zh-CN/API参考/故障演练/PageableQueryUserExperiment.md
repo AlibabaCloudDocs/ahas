@@ -11,15 +11,16 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|PageableQueryUserExperiment|系统规定参数。取值：PageableQueryUserExperiment。 |
-|SearchKey|String|否|演练检索关键字|演练检索关键字 |
+|SearchKey|String|否|演练名称检索|演练检索关键字 |
 |State|String|否|READY|演练状态 |
 |Page|Integer|否|1|页码 |
 |Size|Integer|否|10|分页大小 |
 |Namespace|String|否|default|演练所属的命名空间 |
-|RegionId|String|否|cn-hangzhou|地域 |
 |AhasRegionId|String|否|cn-public|演练所属地域ID（调用公网接口使用） |
 |Tags.N|RepeatList|否|演练标签|演练检索标签 |
 |Results.N|RepeatList|否|FINISHED|演练最后一次任务运行结果 |
+|WorkspaceId|String|否|1234567890123456789|演练空间ID。若传入该字段则查询指定空间的演练列表，否则查询用户默认空间的演练列表。 |
+|RegionId|String|否|cn-hangzhou|地域。 |
 
 ## 返回数据
 
@@ -33,9 +34,25 @@
 |ExperimentId|String|1234567890123456789|故障演练ID |
 |MiniApps|List|cpu|故障演练有关的小程序 |
 |Name|String|演练名称|故障演练名称 |
-|Permission|Integer|7|当前账号对故障演练权限 |
-|Result|String|SUCCESS|故障演练最后一次任务的执行结果 |
-|State|String|READY|演练状态 |
+|Permission|Integer|7|当前账号对故障演练权限：
+
+ -   1：只读权限
+-   2：编辑权限
+-   4：执行权限
+-   7：所有权限 |
+|Result|String|SUCCESS|故障演练最后一次任务的执行结果：
+
+ -   SUCCESS（成功）
+-   FAILED（失败）
+-   REJECTED（任务调过）
+-   ERROR（任务异常中断）
+-   STOPPED（任务被终止）
+-   SOPPED\_FAILED（停止失败） |
+|State|String|READY|演练状态：
+
+ -   READY（就绪）
+-   RUNNING（正在执行）
+-   FINISHED（执行结束） |
 |Tags|List|演练标签|故障演练标签 |
 |HttpStatusCode|Integer|200|HTTP状态码 |
 |Message|String|null|接口异常信息 |
@@ -60,6 +77,7 @@ http(s)://[Endpoint]/?Action=PageableQueryUserExperiment
 &AhasRegionId=cn-public
 &Tags.N=演练标签
 &Results.N=FINISHED
+&WorkspaceId=1234567890123456789
 &<公共请求参数>
 ```
 
