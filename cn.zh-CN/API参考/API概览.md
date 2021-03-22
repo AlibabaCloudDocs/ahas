@@ -143,4 +143,5 @@
 |[GetActivityTask](/cn.zh-CN/API参考/故障演练/GetActivityTask.md)|调用GetActivityTask接口查询节点任务详情。|
 |[PageableQueryUserExperiment](/cn.zh-CN/API参考/故障演练/PageableQueryUserExperiment.md)|调用PageableQueryUserExperiment接口查询用户演练列表。|
 |[PageableQueryExperimentTaskByExperimentId](/cn.zh-CN/API参考/故障演练/PageableQueryExperimentTaskByExperimentId.md)|调用PageableQueryExperimentTaskByExperimentId接口根据演练ID分页查询演练任务。|
+|[GetUserWorkspace](/cn.zh-CN/API参考/故障演练/GetUserWorkspace.md)|调用GetUserWorkspace接口查询用户下所有演练空间，包括默认空间、管理空间和参与空间。|
 
