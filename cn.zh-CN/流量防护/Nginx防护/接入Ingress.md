@@ -6,11 +6,11 @@ keyword: [Ingress Nginx, ACK, Nginx防护]
 
 Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集群内部服务的方式。AHAS支持Ingress接入Nginx防护，然后对其设置流控规则，实现应用的高可用。本文介绍如何接入Ingress。
 
-目前AHAS控制台接入Ingress只支持深圳、北京、上海、张家口、杭州五个地域。在其他地域创建的ACK集群，AHAS控制台即使接入Ingress也无法生效。
+目前AHAS控制台接入Ingress支持深圳、北京、上海、张家口、杭州五个地域。在其他地域创建的ACK集群，需要使用公网接入的方式接入Ingress。具体操作，请参见[步骤8](#step_ixd_0xz_45o)。
 
 ## 接入Ingress
 
-1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)，创建ACK集群。具体操作，请参见[创建Kubernetes托管版集群](/cn.zh-CN/Kubernetes集群用户指南/集群管理/创建集群/创建Kubernetes托管版集群.md)。
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)，创建ACK集群。具体操作，请参见[创建Kubernetes托管版集群](/cn.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes托管版集群.md)。
 
     在创建ACK集群时，必须选中**安装Ingress组件**。
 
@@ -26,13 +26,9 @@ Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集
 
 5.  在编辑页面，单击**nginx-ingress-controller**页签，设置以下参数，然后单击**更新**。
 
-    1.  设置**镜像名称**为**registry.cn-hangzhou.aliyuncs.com/ahas/ahas-ingress-control**。
+    设置**所需资源**的**CPU**为**1000m** Core，**内存**为**2048** MiB。其他参数保持默认设置。
 
-    2.  设置**镜像Tag**为**v1.0.7-6ebc13dc545c**。
-
-    3.  设置**所需资源**的**CPU**为**1000m** Core，**内存**为**2048** MiB。其他参数保持默认设置。
-
-        **说明：** 由于引入流控功能会带来一些资源消耗，所以建议您设置Ingress最小配置CPU为1000m Core、内存为2048 MiB。
+    **说明：** 由于引入流控功能会带来一些资源消耗，所以建议您设置Ingress最小配置CPU为1000m Core、内存为2048 MiB。
 
 6.  在集群管理页左侧导航栏中，选择**配置管理** \> **配置项**。
 
@@ -40,13 +36,23 @@ Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集
 
     ![配置项.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8483522161/p237861.png)
 
-8.  在**编辑**面板最下方单击**+添加**，设置**名称**为sentinel-params，**值**为--app=<应用名\>，然后单击**确定**。
+8.  在**编辑**面板最下方单击**+添加**，设置相关参数，然后单击**确定**。
 
+    -   设置**名称**为sentinel-params。
+    -   设置**值**请参考以下方式：
+        -   若应用是在深圳、北京、上海、张家口、杭州五个地域，设置**值**为--app=<应用名\>。
+        -   若应用是在其他地域，设置**值**为--app=<应用名\> --license=<license\>。实际<license\>的获取方式，请参见[查看License](/cn.zh-CN/流量防护/应用防护/参考信息/查看License.md)。
     例如，本文示例的应用名为demo-k8s-2020，名称和值的设置如下：
 
     -   **名称**：sentinel-params。
-    -   **值**：--app=demo-k8s-2020。
-    ![设置应用名.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8483522161/p237921.png)
+    -   **值**的设置分为两种情况：
+        -   若应用是在深圳、北京、上海、张家口、杭州五个地域，设置**值**为--app=demo-k8s-2020。
+
+            ![公共云](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8691946161/p254183.png)
+
+        -   若应用是在其他地域，设置**值**为--app=demo-k8s-2020 --license=<license\>。
+
+            ![其他地域](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8691946161/p254184.png)
 
     **说明：**
 
@@ -56,7 +62,7 @@ Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集
 
     use-sentinel是流控开关配置项，表示是否加载流控组件：
 
-    -   true：设置值为true后，表示加载流控组件，该配置项的值默认为true。
+    -   true：设置值为true后，表示加载流控组件，该配置项的值默认为false。
     -   false：设置值为false后，退化成不带流控功能的Ingress镜像，AHAS控制台的应用也会消失。
 
 ## 验证结果
