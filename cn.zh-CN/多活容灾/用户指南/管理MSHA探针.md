@@ -12,13 +12,11 @@ keyword: [探针管理, 安装Agent, 卸载Agent, MSHA探针]
 
 2.  在控制台左侧导航栏中选择**多活容灾**。
 
-3.  在左侧导航栏选择**运维** \> **探针管理**。
+3.  在左侧导航栏选择**监控中心** \> **探针管理**。
 
-    在探针管理页面，获取当前的license信息。
+4.  在探针管理页面，单击**查看Licence**，然后单击**复制Licences**。
 
-    ![当前license.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7781764161/p244908.png)
-
-4.  执行以下代码下载探针。
+5.  执行以下代码下载探针。
 
     ```
     wget -O ./msha-agent.jar ${地址}
@@ -35,7 +33,7 @@ keyword: [探针管理, 安装Agent, 卸载Agent, MSHA探针]
 
     **说明：** 如果是EDAS应用，请使用admin账号执行。
 
-5.  配置JVM参数。
+6.  配置JVM参数。
 
     ```
     -javaagent:${探针安装路径}  
@@ -47,9 +45,9 @@ keyword: [探针管理, 安装Agent, 卸载Agent, MSHA探针]
     **说明：**
 
     -   请将`${应用名称}`替换成您实际的应用名，应用名称暂不支持中文。
-    -   命名空间ID之间用半角逗号（,）分隔，命名空间ID的信息可以通过[多活容灾控制台](https://msha.console.aliyun.com/msha/home)的**命名空间概览**页的**空间ID**处获取。
-    -   `${当前license}`替换成您在步骤[3](#step_km4_8q8_f70)中获取到的license信息。
-6.  重启应用。
+    -   命名空间ID之间用半角逗号（,）分隔，命名空间ID的信息可以通过命名空间概览页的**空间ID**处获取。
+    -   `${当前license}`替换成您在步骤[4](#step_9ai_jal_50d)中获取到的license信息。
+7.  重启应用。
 
     重启应用后，在探针管理页面，您的应用出现在列表中且状态显示为**在线**，则说明探针安装成功。
 
