@@ -10,7 +10,7 @@
 
     **说明：** 每个地域会有一个默认（Default）环境。您也可以添加自定义环境，如开发环境、测试环境等。不同环境的资源逻辑隔离。
 
-    ![添加环境1.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0776928161/p263020.png)
+    ![添加环境1.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3786928161/p263020.png)
 
 4.  在探针管理页面，单击**探针安装** \> **安装架构感知探针**，并在选择环境页面单击**Linux主机**卡片。
 5.  在安装应用高可用插件页面，复制命令。登录主机，使用Root用户执行复制的命令。
