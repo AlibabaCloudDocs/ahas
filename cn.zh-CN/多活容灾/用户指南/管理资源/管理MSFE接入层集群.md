@@ -80,6 +80,8 @@ keyword: [接入层集群, 创建集群, 共享集群]
 
     创建成功后，您可以在**接入层服务器**中看到新增的服务器，且状态显示结束。
 
-    ![新增服务器.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1867911061/p169793.png)
+5.  在MSFE集群页面的接入层服务器区域，鼠标悬浮至**运行状态**列的状态，可以查看本实例健康状况以及最近一次的健康检查的时间（MSHA会定期对实例发起健康检查）；单击**负载**列下的图标，可以查看自定义时间段内本实例承受的QPS时序图。
+
+    ![MSFE管理.png](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5942579161/p270119.png)
 
 
