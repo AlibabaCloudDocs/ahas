@@ -10,11 +10,29 @@ keyword: [Java Agent, 探针版本]
 
 |版本号|版本说明|
 |---|----|
-|1.8.0|-   新增Spring Web插件支持（REST AP会自动提取pattern），原有的Servlet插件默认不开启。
+|1.9.0|-   支持JDK 6-11。
+-   支持触发规则统计、异常统计。
+-   修复Spring Web适配模块在异Servlet场景下可能出现的统计问题。 |
+|1.8.6|-   Dubbo插件支持Dubbo 2.7.6+版本。
+-   自适应流控新增采样日志。
+-   支持上海金融云环境。
+
+**说明：** 建议1.8.x版本Java Agent至少升级至该版本。 |
+|1.8.5|-   新增主动降级规则支持。
+-   支持控制台配置Web fallback行为。 |
+|1.8.4|支持MST压测功能。|
+|1.8.3|-   新增Dubbo 2.7.x adapter支持。
+-   支持通过启动参数指定全局滑动窗口配置。
+-   修复HTTP状态码统计模块线程池的问题。
+-   完善对非HotSpot JVM的支持。 |
+|1.8.2|修复HTTP状态码统计模块可能导致CPU被占满的问题。|
+|1.8.1|-   新增HTTP接口状态码统计，支持Spring MVC/Spring Boot/Spring Cloud/Spring Cloud Gateway/Zuul 1.x。
+-   新增指标统计，操作系统指标新增内存、网络、磁盘等指标种类；JVM指标新增GC、JVM内存、线程数等指标。 |
+|1.8.0|-   新增Spring Web插件支持（REST API会自动提取pattern），原有的Servlet插件默认不开启。
 -   新增MyBatis插件支持，原有的JDBC插件默认不开启。
 -   同步SDK 1.7.x最新相关特性（自适应流控）。 |
 |1.7.10|-   修复熔断降级模块在同资源配置多个规则时可能出现无法从half-open状态中恢复的问题。
--   修复fastjson版本导致JDK 1.7下Agent无法正常使用的问题。 |
+-   修复fastjson版本导致JDK 1.7下Agent无法正常工作的问题。 |
 |1.7.9|-   集群流控支持单机大流量场景（批量请求）。
 -   修复熔断降级规则阈值比例为100%时不生效的问题。 |
 |1.7.8|-   修复Spring Cloud Gateway、Zuul等网关插件不生效的问题。
