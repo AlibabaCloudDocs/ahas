@@ -19,6 +19,12 @@
 
 |版本号|发布时间|版本说明|
 |---|----|----|
+|1.9.1|2021年05月14日|-   修复Spring Web适配模块在异步Servlet场景下可能出现的统计问题。
+-   修复容器内CPU usage监控展示问题。
+-   完善对JDK 1.6的支持。 |
+|1.9.0|2021年05月01日|-   SDK支持JDK 6-11。
+-   新增异常信息统计支持。 |
+|1.8.10|2021年04月24日|控制台支持展示具体的触发规则。|
 |1.8.9|2021年04月09日|新增上海金融云环境支持。|
 |1.8.8|2021年04月02日|-   新增自适应流控采样日志。
 -   完善HSF adapter判断本机调用及解析来源的逻辑。 |
@@ -94,6 +100,9 @@
 
 |版本|发布时间|版本说明|
 |--|----|----|
+|1.9.1|2021年05月14日|特性对应ahas-sentinel-client 1.9.1，完善对Spring Boot 1.x版本的支持。|
+|1.9.0|2021年05月01日|特性对应ahas-sentinel-client 1.9.0。|
+|1.8.10|2021年04月24日|特性对应ahas-sentinel-client 1.8.10。|
 |1.8.9|2021年04月09日|特性对应ahas-sentinel-client 1.8.9。|
 |1.8.8|2021年04月02日|新增Spring RestTemplate适配。|
 |1.8.7|2021年03月12日|-   完善Spring Cloud动态配置场景下解析AppName的逻辑。
@@ -135,6 +144,8 @@
 
 |版本号|版本说明|
 |---|----|
+|1.4.1|特性对应spring-boot-starter-ahas-sentinel-client 1.9.1版本。|
+|1.4.0|特性对应spring-boot-starter-ahas-sentinel-client 1.9.0版本。|
 |1.3.6|-   完善Spring Cloud动态配置场景下解析AppName的逻辑。
 -   特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.7版本。 |
 |1.3.5|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.6版本。|
@@ -160,6 +171,8 @@
 
 |版本号|版本说明|
 |---|----|
+|1.4.1|特性对应spring-boot-starter-ahas-sentinel-client 1.9.1版本，完善对Spring Boot 1.x版本的支持。|
+|1.4.0|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.9.0版本。|
 |1.3.6|-   完善Spring Cloud动态配置场景下解析AppName的逻辑。
 -   特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.7版本。 |
 |1.3.5|特性对应Spring-Boot-Starter-AHAS-Sentinel-Client 1.8.6版本。|
@@ -185,6 +198,24 @@
 
 |版本号|版本说明|
 |---|----|
+|1.9.0|-   支持JDK 6-11。
+-   支持触发规则统计、异常统计。
+-   修复Spring Web适配模块在异Servlet场景下可能出现的统计问题。 |
+|1.8.6|-   Dubbo插件支持Dubbo 2.7.6+版本。
+-   自适应流控新增采样日志。
+-   支持上海金融云环境。
+
+**说明：** 建议1.8.x版本Java Agent至少升级至该版本。 |
+|1.8.5|-   新增主动降级规则支持。
+-   支持控制台配置Web fallback行为。 |
+|1.8.4|支持MST压测功能。|
+|1.8.3|-   新增Dubbo 2.7.x adapter支持。
+-   支持通过启动参数指定全局滑动窗口配置。
+-   修复HTTP状态码统计模块线程池的问题。
+-   完善对非HotSpot JVM的支持。 |
+|1.8.2|修复HTTP状态码统计模块可能导致CPU被占满的问题。|
+|1.8.1|-   新增HTTP接口状态码统计，支持Spring MVC/Spring Boot/Spring Cloud/Spring Cloud Gateway/Zuul 1.x。
+-   新增指标统计，操作系统指标新增内存、网络、磁盘等指标种类；JVM指标新增GC、JVM内存、线程数等指标。 |
 |1.8.0|-   新增Spring Web插件支持（REST API会自动提取pattern），原有的Servlet插件默认不开启。
 -   新增MyBatis插件支持，原有的JDBC插件默认不开启。
 -   同步SDK 1.7.x最新相关特性（自适应流控）。 |
