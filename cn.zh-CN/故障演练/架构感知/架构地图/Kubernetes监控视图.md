@@ -81,7 +81,7 @@ keyword: [Kubernetes监控视图, 容器事件]
 |策略（Strategy）|无|
 |容器数量（Container Count）|该Deployment包含的容器个数。|
 |标签|TASK|无|
-|K8S-APP|无|
+|K8s-APP|无|
 |容器组|该Deployment关联的容器组，单击容器组名称可跳转至容器组详情。|
 |容器|该Deployment关联的容器，单击容器名称可跳转至容器详情。|
 |进程|该Deployment关联的进程，单击进程名称可跳转至进程详情。|
