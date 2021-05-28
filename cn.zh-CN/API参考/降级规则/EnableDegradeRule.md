@@ -10,30 +10,31 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|EnableDegradeRule|系统规定参数。取值：EnableDegradeRule。 |
+|Action|String|是|EnableDegradeRule|系统规定参数。取值：**EnableDegradeRule**。 |
 |RuleId|Long|是|123|降级规则ID。 |
+|AhasRegionId|String|否|cn-hangzhou|地域 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|返回码 |
-|Data|Struct| |降级规则数据 |
-|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
-|Enable|Boolean|true|规则是否开启 |
-|HalfOpenBaseAmountPerStep|Integer|5|熔断恢复每步最小通过数目，默认值为5。 |
-|HalfOpenRecoveryStepNum|Integer|1|熔断恢复阶段数 |
-|MinRequestAmount|Integer|10|触发熔断的最小请求数 |
-|Namespace|String|default|命名空间 |
-|RecoveryTimeoutMs|Integer|5000|熔断时长 |
-|Resource|String|handleService|资源名 |
-|RuleId|Long|123|降级规则ID |
-|SlowRtMs|Integer|2000|慢调用RT |
-|StatDurationMs|Integer|2000|统计窗口时长 |
-|Strategy|Integer|200|阈值类型 |
-|Threshold|Float|0.6|降级阈值 |
 |Message|String|null|错误信息 |
 |RequestId|String|3FEEAD12-CE22-4EDE-A729-CE94EC070610|请求ID |
+|Data|Object| |降级规则数据 |
+|SlowRtMs|Integer|2000|慢调用RT |
+|HalfOpenRecoveryStepNum|Integer|1|熔断恢复阶段数 |
+|Namespace|String|default|命名空间 |
+|StatDurationMs|Integer|2000|统计窗口时长 |
+|RuleId|Long|123|降级规则ID |
+|Strategy|Integer|200|阈值类型 |
+|Resource|String|handleService|资源名 |
+|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|HalfOpenBaseAmountPerStep|Integer|5|熔断恢复每步最小通过数目，默认值为5。 |
+|RecoveryTimeoutMs|Integer|5000|熔断时长 |
+|MinRequestAmount|Integer|10|触发熔断的最小请求数 |
+|Threshold|Float|0.6|降级阈值 |
+|Enable|Boolean|true|规则是否开启 |
+|Code|String|200|返回码 |
 |Success|Boolean|true|是否成功 |
 
 ## 示例
@@ -47,56 +48,61 @@ http(s)://[Endpoint]/?Action=EnableDegradeRule
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/xml
+
 <EnableDegradeRuleResponse>
-  <Message>null</Message>
-  <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
-  <Data>
-        <MinRequestAmount>10</MinRequestAmount>
-        <RuleId>123</RuleId>
-        <Resource>handleService</Resource>
+    <Message>null</Message>
+    <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
+    <Data>
         <SlowRtMs>2000</SlowRtMs>
-        <Namespace>default</Namespace>
-        <AppName>ahas-demo</AppName>
         <HalfOpenRecoveryStepNum>1</HalfOpenRecoveryStepNum>
-        <RecoveryTimeoutMs>5000</RecoveryTimeoutMs>
-        <Enable>true</Enable>
-        <Strategy>200</Strategy>
-        <HalfOpenBaseAmountPerStep>5</HalfOpenBaseAmountPerStep>
+        <Namespace>default</Namespace>
         <StatDurationMs>2000</StatDurationMs>
+        <RuleId>123</RuleId>
+        <Strategy>200</Strategy>
+        <Resource>handleService</Resource>
+        <AppName>ahas-demo</AppName>
+        <HalfOpenBaseAmountPerStep>5</HalfOpenBaseAmountPerStep>
+        <RecoveryTimeoutMs>5000</RecoveryTimeoutMs>
+        <MinRequestAmount>10</MinRequestAmount>
         <Threshold>0.6</Threshold>
-  </Data>
-  <Code>200</Code>
-  <Success>true</Success>
+        <Enable>true</Enable>
+    </Data>
+    <Code>200</Code>
+    <Success>true</Success>
 </EnableDegradeRuleResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/json
+
 {
-    "Message":"null",
-    "RequestId":"3FEEAD12-CE22-4EDE-A729-CE94EC070610",
-    "Data":
-    {
-        "MinRequestAmount":"10",
-        "RuleId":"123",
-        "Resource":"handleService",
-        "SlowRtMs":"2000",
-        "Namespace":"default",
-        "AppName":"ahas-demo",
-        "HalfOpenRecoveryStepNum":"1",
-        "RecoveryTimeoutMs":"5000",
-        "Enable":"true",
-        "Strategy":"200",
-        "HalfOpenBaseAmountPerStep":"5",
-        "StatDurationMs":"2000",
-        "Threshold":"0.6"
-    },
-    "Code":"200",
-    "Success":"true"
+  "Message" : "null",
+  "RequestId" : "3FEEAD12-CE22-4EDE-A729-CE94EC070610",
+  "Data" : {
+    "SlowRtMs" : 2000,
+    "HalfOpenRecoveryStepNum" : 1,
+    "Namespace" : "default",
+    "StatDurationMs" : 2000,
+    "RuleId" : 123,
+    "Strategy" : 200,
+    "Resource" : "handleService",
+    "AppName" : "ahas-demo",
+    "HalfOpenBaseAmountPerStep" : 5,
+    "RecoveryTimeoutMs" : 5000,
+    "MinRequestAmount" : 10,
+    "Threshold" : 0.6,
+    "Enable" : true
+  },
+  "Code" : "200",
+  "Success" : true
 }
 ```
 
