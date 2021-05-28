@@ -10,38 +10,39 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ListDegradeRulesOfApp|系统规定参数。取值：ListDegradeRulesOfApp。 |
-|AppName|String|是|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|Action|String|是|ListDegradeRulesOfApp|系统规定参数。取值：**ListDegradeRulesOfApp**。 |
 |Namespace|String|是|default|命名空间。 |
+|AppName|String|是|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
 |PageIndex|Integer|否|1|当前页码，默认为1。 |
 |PageSize|Integer|否|10|每页数据条数，默认为10。 |
+|AhasRegionId|String|否|cn-hangzhou|地域 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|返回码 |
-|Data|Struct| |返回数据 |
-|Datas|Array of Datas| |降级规则列表 |
-|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
-|Enable|Boolean|true|规则是否开启 |
-|HalfOpenBaseAmountPerStep|Integer|5|熔断恢复每步最小通过数目，默认值为5。 |
-|HalfOpenRecoveryStepNum|Integer|1|熔断恢复阶段数 |
-|MinRequestAmount|Integer|10|触发熔断的最小请求数 |
-|Namespace|String|default|命名空间 |
-|RecoveryTimeoutMs|Integer|5000|熔断时长 |
-|Resource|String|handleServiceA|资源名 |
-|RuleId|Long|123|规则ID |
-|SlowRtMs|Integer|2000|慢调用RT |
-|StatDurationMs|Integer|2000|统计窗口时长 |
-|Strategy|Integer|0|阈值类型 |
-|Threshold|Float|0.6|降级阈值 |
-|PageIndex|Integer|1|当前页码 |
-|PageSize|Integer|10|每页数据条数 |
-|TotalCount|Integer|23|总数据量 |
-|TotalPage|Integer|3|总页数 |
 |Message|String|null|错误信息 |
 |RequestId|String|3FEEAD12-CE22-4EDE-A729-CE94EC070610|请求ID |
+|Data|Object| |返回数据 |
+|PageIndex|Integer|1|当前页码 |
+|Datas|Array of Datas| |降级规则列表 |
+|SlowRtMs|Integer|2000|慢调用RT |
+|HalfOpenRecoveryStepNum|Integer|1|熔断恢复阶段数 |
+|Namespace|String|default|命名空间 |
+|StatDurationMs|Integer|2000|统计窗口时长 |
+|RuleId|Long|123|规则ID |
+|Strategy|Integer|0|阈值类型 |
+|Resource|String|handleServiceA|资源名 |
+|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|HalfOpenBaseAmountPerStep|Integer|5|熔断恢复每步最小通过数目，默认值为5。 |
+|RecoveryTimeoutMs|Integer|5000|熔断时长 |
+|MinRequestAmount|Integer|10|触发熔断的最小请求数 |
+|Threshold|Float|0.6|降级阈值 |
+|Enable|Boolean|true|规则是否开启 |
+|TotalPage|Integer|3|总页数 |
+|PageSize|Integer|10|每页数据条数 |
+|TotalCount|Integer|23|总数据量 |
+|Code|String|200|返回码 |
 |Success|Boolean|true|是否成功 |
 
 ## 示例
@@ -57,40 +58,74 @@ http(s)://[Endpoint]/?Action=ListDegradeRulesOfApp
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<Message>null</Message>
-<RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
-<Data>
-    <TotalCount>23</TotalCount>
-    <PageSize>10</PageSize>
-    <TotalPage>3</TotalPage>
-    <Datas>
-        <MinRequestAmount>10</MinRequestAmount>
-        <RuleId>123</RuleId>
-        <Resource>handleServiceA</Resource>
-        <SlowRtMs>2000</SlowRtMs>
-        <Namespace>default</Namespace>
-        <AppName>ahas-demo</AppName>
-        <HalfOpenRecoveryStepNum>1</HalfOpenRecoveryStepNum>
-        <RecoveryTimeoutMs>5000</RecoveryTimeoutMs>
-        <Enable>true</Enable>
-        <Strategy>0</Strategy>
-        <HalfOpenBaseAmountPerStep>5</HalfOpenBaseAmountPerStep>
-        <StatDurationMs>2000</StatDurationMs>
-        <Threshold>0.6</Threshold>
-    </Datas>
-    <PageIndex>1</PageIndex>
-</Data>
-<Code>200</Code>
-<Success>true</Success>
+HTTP/1.1 200 OK
+Content-Type:application/xml
+
+<ListDegradeRulesOfAppResponse>
+    <Message>null</Message>
+    <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
+    <Data>
+        <PageIndex>1</PageIndex>
+        <Datas>
+            <SlowRtMs>2000</SlowRtMs>
+            <HalfOpenRecoveryStepNum>1</HalfOpenRecoveryStepNum>
+            <Namespace>default</Namespace>
+            <StatDurationMs>2000</StatDurationMs>
+            <RuleId>123</RuleId>
+            <Strategy>0</Strategy>
+            <Resource>handleServiceA</Resource>
+            <AppName>ahas-demo</AppName>
+            <HalfOpenBaseAmountPerStep>5</HalfOpenBaseAmountPerStep>
+            <RecoveryTimeoutMs>5000</RecoveryTimeoutMs>
+            <MinRequestAmount>10</MinRequestAmount>
+            <Threshold>0.6</Threshold>
+            <Enable>true</Enable>
+        </Datas>
+        <TotalPage>3</TotalPage>
+        <PageSize>10</PageSize>
+        <TotalCount>23</TotalCount>
+    </Data>
+    <Code>200</Code>
+    <Success>true</Success>
+</ListDegradeRulesOfAppResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
-{"Message":"null","RequestId":"3FEEAD12-CE22-4EDE-A729-CE94EC070610","Data":{"TotalCount":"23","PageSize":"10","TotalPage":"3","Datas":[{"MinRequestAmount":"10","RuleId":"123","Resource":"handleServiceA","SlowRtMs":"2000","Namespace":"default","AppName":"ahas-demo","HalfOpenRecoveryStepNum":"1","RecoveryTimeoutMs":"5000","Enable":"true","Strategy":"0","HalfOpenBaseAmountPerStep":"5","StatDurationMs":"2000","Threshold":"0.6"}],"PageIndex":"1"},"Code":"200","Success":"true"}
+HTTP/1.1 200 OK
+Content-Type:application/json
+
+{
+  "Message" : "null",
+  "RequestId" : "3FEEAD12-CE22-4EDE-A729-CE94EC070610",
+  "Data" : {
+    "PageIndex" : 1,
+    "Datas" : [ {
+      "SlowRtMs" : 2000,
+      "HalfOpenRecoveryStepNum" : 1,
+      "Namespace" : "default",
+      "StatDurationMs" : 2000,
+      "RuleId" : 123,
+      "Strategy" : 0,
+      "Resource" : "handleServiceA",
+      "AppName" : "ahas-demo",
+      "HalfOpenBaseAmountPerStep" : 5,
+      "RecoveryTimeoutMs" : 5000,
+      "MinRequestAmount" : 10,
+      "Threshold" : 0.6,
+      "Enable" : true
+    } ],
+    "TotalPage" : 3,
+    "PageSize" : 10,
+    "TotalCount" : 23
+  },
+  "Code" : "200",
+  "Success" : true
+}
 ```
 
 ## 错误码
