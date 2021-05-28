@@ -10,31 +10,32 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ListSystemRules|系统规定参数。取值：ListSystemRules。 |
-|AppName|String|是|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|Action|String|是|ListSystemRules|系统规定参数。取值：**ListSystemRules**。 |
 |Namespace|String|是|default|命名空间 |
+|AppName|String|是|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
 |PageIndex|Integer|否|1|当前页码 |
 |PageSize|Integer|否|10|每页数据条数 |
+|AhasRegionId|String|否|cn-hangzhou|地域 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|返回码 |
-|Data|Struct| |返回数据 |
-|Datas|Array of Datas| |系统规则列表 |
-|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
-|Enable|Boolean|true|是否开启 |
-|MetricType|Integer|4|统计维度 |
-|Namespace|String|default|命名空间 |
-|RuleId|Long|123|规则ID |
-|Threshold|Float|0.6|阈值 |
-|PageIndex|Integer|1|当前页码 |
-|PageSize|Integer|10|每页数据条数 |
-|TotalCount|Integer|23|总数据量 |
-|TotalPage|Integer|3|总页数 |
 |Message|String|null|错误信息 |
 |RequestId|String|3FEEAD12-CE22-4EDE-A729-CE94EC070610|请求ID |
+|Data|Object| |返回数据 |
+|PageIndex|Integer|1|当前页码 |
+|Datas|Array of Datas| |系统规则列表 |
+|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|Namespace|String|default|命名空间 |
+|MetricType|Integer|4|统计维度 |
+|Threshold|Float|0.6|阈值 |
+|Enable|Boolean|true|是否开启 |
+|RuleId|Long|123|规则ID |
+|TotalPage|Integer|3|总页数 |
+|PageSize|Integer|10|每页数据条数 |
+|TotalCount|Integer|23|总数据量 |
+|Code|String|200|返回码 |
 |Success|Boolean|true|是否成功 |
 
 ## 示例
@@ -50,55 +51,59 @@ http(s)://[Endpoint]/?Action=ListSystemRules
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/xml
+
 <ListSystemRulesResponse>
-  <Message>null</Message>
-  <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
-  <Data>
-        <TotalCount>23</TotalCount>
+    <Message>null</Message>
+    <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
+    <Data>
+        <PageIndex>1</PageIndex>
+        <Datas>
+            <AppName>ahas-demo</AppName>
+            <Namespace>default</Namespace>
+            <MetricType>4</MetricType>
+            <Threshold>0.6</Threshold>
+            <Enable>true</Enable>
+            <RuleId>123</RuleId>
+        </Datas>
         <TotalPage>3</TotalPage>
         <PageSize>10</PageSize>
-        <Datas>
-              <MetricType>4</MetricType>
-              <RuleId>123</RuleId>
-              <Enable>true</Enable>
-              <Namespace>default</Namespace>
-              <AppName>ahas-demo</AppName>
-              <Threshold>0.6</Threshold>
-        </Datas>
-        <PageIndex>1</PageIndex>
-  </Data>
-  <Code>200</Code>
-  <Success>true</Success>
+        <TotalCount>23</TotalCount>
+    </Data>
+    <Code>200</Code>
+    <Success>true</Success>
 </ListSystemRulesResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/json
+
 {
-    "Message":"null",
-    "RequestId":"3FEEAD12-CE22-4EDE-A729-CE94EC070610",
-    "Data":
-    {
-        "TotalCount":"23",
-        "TotalPage":"3",
-        "PageSize":"10",
-        "Datas":
-        [{
-            "MetricType":"4",
-            "RuleId":"123",
-            "Enable":"true",
-            "Namespace":"default",
-            "AppName":"ahas-demo",
-            "Threshold":"0.6"
-        }],
-        "PageIndex":"1"
-    },
-    "Code":"200",
-    "Success":"true"
+  "Message" : "null",
+  "RequestId" : "3FEEAD12-CE22-4EDE-A729-CE94EC070610",
+  "Data" : {
+    "PageIndex" : 1,
+    "Datas" : [ {
+      "AppName" : "ahas-demo",
+      "Namespace" : "default",
+      "MetricType" : 4,
+      "Threshold" : 0.6,
+      "Enable" : true,
+      "RuleId" : 123
+    } ],
+    "TotalPage" : 3,
+    "PageSize" : 10,
+    "TotalCount" : 23
+  },
+  "Code" : "200",
+  "Success" : true
 }
 ```
 
