@@ -10,26 +10,27 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DisableIsolationRule|系统规定参数。取值：DisableIsolationRule。 |
+|Action|String|是|DisableIsolationRule|系统规定参数。取值：**DisableIsolationRule**。 |
 |RuleId|Long|是|123|隔离规则ID。 |
+|AhasRegionId|String|否|cn-hangzhou|地域 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|返回码 |
-|Data|Struct| |隔离规则数据 |
-|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
-|Enable|Boolean|false|规则是否启用 |
-|LimitOrigin|String|default|来源应用 |
-|Namespace|String|default|命名空间 |
-|RefResource|String|handleServiceB|关联接口名、callstack入口名 |
-|RelationStrategy|Integer|0|统计维度 |
-|Resource|String|handleServiceA|资源名 |
-|RuleId|Long|123|隔离规则ID |
-|Threshold|Float|10|并发数阈值 |
 |Message|String|null|错误信息 |
 |RequestId|String|3FEEAD12-CE22-4EDE-A729-CE94EC070610|请求ID |
+|Data|Object| |隔离规则数据 |
+|RelationStrategy|Integer|0|统计维度 |
+|Resource|String|handleServiceA|资源名 |
+|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|RefResource|String|handleServiceB|关联接口名、callstack入口名 |
+|Namespace|String|default|命名空间 |
+|LimitOrigin|String|default|来源应用 |
+|Threshold|Float|10|并发数阈值 |
+|RuleId|Long|123|隔离规则ID |
+|Enable|Boolean|false|规则是否启用 |
+|Code|String|200|返回码 |
 |Success|Boolean|true|是否成功 |
 
 ## 示例
@@ -44,48 +45,53 @@ http(s)://[Endpoint]/?Action=DisableIsolationRule
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/xml
+
 <DisableIsolationRuleResponse>
-  <Message>null</Message>
-  <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
-  <Data>
-        <RefResource>handleServiceB</RefResource>
-        <RuleId>123</RuleId>
-        <Resource>handleServiceA</Resource>
-        <Enable>false</Enable>
+    <Message>null</Message>
+    <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
+    <Data>
         <RelationStrategy>0</RelationStrategy>
-        <LimitOrigin>default</LimitOrigin>
-        <Namespace>default</Namespace>
+        <Resource>handleServiceA</Resource>
         <AppName>ahas-demo</AppName>
+        <RefResource>handleServiceB</RefResource>
+        <Namespace>default</Namespace>
+        <LimitOrigin>default</LimitOrigin>
         <Threshold>10</Threshold>
-  </Data>
-  <Code>200</Code>
-  <Success>true</Success>
+        <RuleId>123</RuleId>
+        <Enable>false</Enable>
+    </Data>
+    <Code>200</Code>
+    <Success>true</Success>
 </DisableIsolationRuleResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/json
+
 {
-    "Message":"null",
-    "RequestId":"3FEEAD12-CE22-4EDE-A729-CE94EC070610",
-    "Data":
-    {
-        "RefResource":"handleServiceB",
-        "RuleId":"123",
-        "Resource":"handleServiceA",
-        "Enable":"false",
-        "RelationStrategy":"0",
-        "LimitOrigin":"default",
-        "Namespace":"default",
-        "AppName":"ahas-demo",
-        "Threshold":"10"
-    },
-    "Code":"200",
-    "Success":"true"
+  "Message" : "null",
+  "RequestId" : "3FEEAD12-CE22-4EDE-A729-CE94EC070610",
+  "Data" : {
+    "RelationStrategy" : 0,
+    "Resource" : "handleServiceA",
+    "AppName" : "ahas-demo",
+    "RefResource" : "handleServiceB",
+    "Namespace" : "default",
+    "LimitOrigin" : "default",
+    "Threshold" : 10,
+    "RuleId" : 123,
+    "Enable" : false
+  },
+  "Code" : "200",
+  "Success" : true
 }
 ```
 
