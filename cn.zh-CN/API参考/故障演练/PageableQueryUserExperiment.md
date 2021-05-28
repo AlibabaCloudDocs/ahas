@@ -10,15 +10,13 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|PageableQueryUserExperiment|系统规定参数。取值：PageableQueryUserExperiment。 |
+|Action|String|是|PageableQueryUserExperiment|系统规定参数。取值：**PageableQueryUserExperiment**。 |
 |SearchKey|String|否|演练名称检索|演练检索关键字 |
 |State|String|否|READY|演练状态 |
 |Page|Integer|否|1|页码 |
 |Size|Integer|否|10|分页大小 |
 |Namespace|String|否|default|演练所属的命名空间 |
 |AhasRegionId|String|否|cn-public|演练所属地域ID（调用公网接口使用） |
-|Tags.N|RepeatList|否|演练标签|演练检索标签 |
-|Results.N|RepeatList|否|FINISHED|演练最后一次任务运行结果 |
 |WorkspaceId|String|否|1234567890123456789|演练空间ID。若传入该字段则查询指定空间的演练列表，否则查询用户默认空间的演练列表。 |
 |RegionId|String|否|cn-hangzhou|地域。 |
 
@@ -26,14 +24,13 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|P\_ERROR\_\*\*\*\*|接口请求反馈编码 |
+|Pages|Integer|2|页数 |
+|RequestId|String|0f7dd92f-4490-\*\*\*\*-b8bd-\*\*\*\*|请求ID |
+|Message|String|null|接口异常信息 |
+|PageSize|Integer|10|每页数据条数 |
 |CurrentPage|Integer|1|当前页码 |
+|Total|Integer|20|数据总数 |
 |ExperimentList|Array of ExperimentInfo| |演练列表 |
-|CreateTime|Long|1611835037000|演练创建时间 |
-|Creator|String|1XXXXXXXXXX|演练创建人UserID |
-|ExperimentId|String|1234567890123456789|故障演练ID |
-|MiniApps|List|cpu|故障演练有关的小程序 |
-|Name|String|演练名称|故障演练名称 |
 |Permission|Integer|7|当前账号对故障演练权限：
 
  -   1：只读权限
@@ -53,14 +50,15 @@
  -   READY（就绪）
 -   RUNNING（正在执行）
 -   FINISHED（执行结束） |
-|Tags|List|演练标签|故障演练标签 |
+|CreateTime|Long|1611835037000|演练创建时间 |
+|ExperimentId|String|1234567890123456789|故障演练ID |
+|Tags|Array of String|演练标签|故障演练标签 |
+|MiniApps|Array of String|cpu|故障演练有关的小程序 |
+|Name|String|演练名称|故障演练名称 |
+|Creator|String|1XXXXXXXXXX|演练创建人UserID |
 |HttpStatusCode|Integer|200|HTTP状态码 |
-|Message|String|null|接口异常信息 |
-|PageSize|Integer|10|每页数据条数 |
-|Pages|Integer|2|页数 |
-|RequestId|String|0f7dd92f-4490-\*\*\*\*-b8bd-\*\*\*\*|请求ID |
+|Code|String|P\_ERROR\_\*\*\*\*|接口请求反馈编码 |
 |Success|Boolean|true|接口请求成功标识 |
-|Total|Integer|20|数据总数 |
 
 ## 示例
 
@@ -86,64 +84,64 @@ http(s)://[Endpoint]/?Action=PageableQueryUserExperiment
 `XML`格式
 
 ```
-<PageableQueryUserExperiment>
-  <Pages>2</Pages>
-  <PageSize>10</PageSize>
-  <RequestId>0f7dd92f-4490-****-b8bd-****</RequestId>
-  <Message>null</Message>
-  <CurrentPage>1</CurrentPage>
-  <Total>20</Total>
-  <ExperimentList>
-        <State>READY</State>
-        <ExperimentId>1234567890123456789</ExperimentId>
-        <CreateTime>1611835037000</CreateTime>
+HTTP/1.1 200 OK
+Content-Type:application/xml
+
+<PageableQueryUserExperimentResponse>
+    <Pages>2</Pages>
+    <RequestId>0f7dd92f-4490-****-b8bd-****</RequestId>
+    <Message>null</Message>
+    <PageSize>10</PageSize>
+    <CurrentPage>1</CurrentPage>
+    <Total>20</Total>
+    <ExperimentList>
         <Permission>7</Permission>
-        <Creator>1XXXXXXXXXX</Creator>
         <Result>SUCCESS</Result>
-        <Name>演练名称</Name>
+        <State>READY</State>
+        <CreateTime>1611835037000</CreateTime>
+        <ExperimentId>1234567890123456789</ExperimentId>
         <Tags>演练标签</Tags>
         <MiniApps>cpu</MiniApps>
-  </ExperimentList>
-  <HttpStatusCode>200</HttpStatusCode>
-  <Code>P_ERROR_****</Code>
-  <Success>true</Success>
-</PageableQueryUserExperiment>
+        <Name>演练名称</Name>
+        <Creator>1XXXXXXXXXX</Creator>
+    </ExperimentList>
+    <HttpStatusCode>200</HttpStatusCode>
+    <Code>P_ERROR_****</Code>
+    <Success>true</Success>
+</PageableQueryUserExperimentResponse>
 ```
 
 `JSON`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/json
+
 {
-    "Pages":"2",
-    "PageSize":"10",
-    "RequestId":"0f7dd92f-4490-****-b8bd-****",
-    "Message":"null",
-    "CurrentPage":"1",
-    "Total":"20",
-    "ExperimentList":[
-        {
-            "State":"READY",
-            "ExperimentId":"1234567890123456789",
-            "CreateTime":"1611835037000",
-            "Permission":"7",
-            "Creator":"1XXXXXXXXXX",
-            "Result":"SUCCESS",
-            "Name":"演练名称",
-            "Tags":"演练标签",
-            "MiniApps":"cpu"
-        }
-    ],
-    "HttpStatusCode":"200",
-    "Code":"P_ERROR_****",
-    "Success":"true"
+  "Pages" : 2,
+  "RequestId" : "0f7dd92f-4490-****-b8bd-****",
+  "Message" : "null",
+  "PageSize" : 10,
+  "CurrentPage" : 1,
+  "Total" : 20,
+  "ExperimentList" : [ {
+    "Permission" : 7,
+    "Result" : "SUCCESS",
+    "State" : "READY",
+    "CreateTime" : 1611835037000,
+    "ExperimentId" : "1234567890123456789",
+    "Tags" : [ "演练标签" ],
+    "MiniApps" : [ "cpu" ],
+    "Name" : "演练名称",
+    "Creator" : "1XXXXXXXXXX"
+  } ],
+  "HttpStatusCode" : 200,
+  "Code" : "P_ERROR_****",
+  "Success" : true
 }
 ```
 
 ## 错误码
-
-|HttpCode|错误码|错误信息|描述|
-|--------|---|----|--|
-|400|IllegalArgument|The specified parameter is invalid.|参数异常|
 
 访问[错误中心](https://error-center.aliyun.com/status/product/ahas-openapi)查看更多错误码。
 
