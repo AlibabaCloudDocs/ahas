@@ -10,42 +10,43 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ListHotParamRulesOfResource|系统规定参数。取值：ListHotParamRulesOfResource。 |
-|AppName|String|是|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|Action|String|是|ListHotParamRulesOfResource|系统规定参数。取值：**ListHotParamRulesOfResource**。 |
 |Namespace|String|是|default|命名空间 |
+|AppName|String|是|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
 |Resource|String|是|handleService|资源名 |
 |PageIndex|Integer|否|1|当前页码 |
 |PageSize|Integer|否|10|每页数据条数 |
+|AhasRegionId|String|否|cn-hangzhou|地域 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|返回码 |
-|Data|Struct| |返回数据 |
-|Datas|Array of Datas| |热点规则列表 |
-|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
-|BurstCount|Integer|2|缓冲请求数 |
-|ControlBehavior|Integer|0|流控效果，0表示快速失败，2表示排队等待。 |
-|Enable|Boolean|true|规则是否开启 |
-|MaxQueueingTimeMs|Integer|3000|流控效果为排队等待时对应的超时时间。 |
-|MetricType|Integer|0|统计维度，0表示并发数，1表示通过请求数。 |
-|Namespace|String|default|命名空间 |
-|ParamFlowItemList|Array of ParamFlowItemList| |热点参数例外项 |
-|ItemType|String|String|例外项类型 |
-|ItemValue|String|apple|例外项参数值 |
-|Threshold|Float|10|例外项阈值 |
-|ParamIdx|Integer|1|热点参数索引 |
-|Resource|String|handleService|资源名 |
-|RuleId|Long|123|规则ID |
-|StatDurationSec|Long|1|统计周期时间 |
-|Threshold|Float|10|例外项阈值 |
-|PageIndex|Integer|1|当前页码 |
-|PageSize|Integer|10|每页数据条数 |
-|TotalCount|Integer|23|总数据量 |
-|TotalPage|Integer|3|总页数 |
 |Message|String|null|错误信息 |
 |RequestId|String|3FEEAD12-CE22-4EDE-A729-CE94EC070610|请求ID |
+|Data|Object| |返回数据 |
+|PageIndex|Integer|1|当前页码 |
+|Datas|Array of Datas| |热点规则列表 |
+|ParamIdx|Integer|1|热点参数索引 |
+|Namespace|String|default|命名空间 |
+|ParamFlowItemList|Array of ParamFlowItemList| |热点参数例外项 |
+|ItemValue|String|apple|例外项参数值 |
+|ItemType|String|String|例外项类型 |
+|Threshold|Float|10|例外项阈值 |
+|StatDurationSec|Long|1|统计周期时间 |
+|BurstCount|Integer|2|缓冲请求数 |
+|RuleId|Long|123|规则ID |
+|Resource|String|handleService|资源名 |
+|AppName|String|ahas-demo|应用名，若为EDAS应用，则AppName为EDAS中的App ID，可在EDAS控制台“应用管理\>基本信息”中查看对应的ID。 |
+|MaxQueueingTimeMs|Integer|3000|流控效果为排队等待时对应的超时时间。 |
+|ControlBehavior|Integer|0|流控效果，0表示快速失败，2表示排队等待。 |
+|MetricType|Integer|0|统计维度，0表示并发数，1表示通过请求数。 |
+|Threshold|Float|10|例外项阈值 |
+|Enable|Boolean|true|规则是否开启 |
+|TotalPage|Integer|3|总页数 |
+|PageSize|Integer|10|每页数据条数 |
+|TotalCount|Integer|23|总数据量 |
+|Code|String|200|返回码 |
 |Success|Boolean|true|是否成功 |
 
 ## 示例
@@ -62,83 +63,81 @@ http(s)://[Endpoint]/?Action=ListHotParamRulesOfResource
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/xml
+
 <ListHotParamRulesOfResourceResponse>
-  <Message>null</Message>
-  <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
-  <Data>
-        <TotalCount>23</TotalCount>
-        <PageSize>10</PageSize>
-        <TotalPage>3</TotalPage>
-        <Datas>
-              <BurstCount>2</BurstCount>
-              <ControlBehavior>0</ControlBehavior>
-              <MetricType>0</MetricType>
-              <RuleId>123</RuleId>
-              <Resource>handleService</Resource>
-              <StatDurationSec>1</StatDurationSec>
-              <Enable>true</Enable>
-              <MaxQueueingTimeMs>3000</MaxQueueingTimeMs>
-              <ParamIdx>1</ParamIdx>
-              <Namespace>default</Namespace>
-              <AppName>ahas-demo</AppName>
-              <Threshold>10</Threshold>
-        </Datas>
-        <Datas>
-              <ParamFlowItemList>
-                    <ItemValue>apple</ItemValue>
-                    <ItemType>String</ItemType>
-                    <Threshold>10</Threshold>
-              </ParamFlowItemList>
-        </Datas>
+    <Message>null</Message>
+    <RequestId>3FEEAD12-CE22-4EDE-A729-CE94EC070610</RequestId>
+    <Data>
         <PageIndex>1</PageIndex>
-  </Data>
-  <Code>200</Code>
-  <Success>true</Success>
+        <Datas>
+            <ParamIdx>1</ParamIdx>
+            <Namespace>default</Namespace>
+            <ParamFlowItemList>
+                <ItemValue>apple</ItemValue>
+                <ItemType>String</ItemType>
+                <Threshold>10</Threshold>
+            </ParamFlowItemList>
+            <StatDurationSec>1</StatDurationSec>
+            <BurstCount>2</BurstCount>
+            <RuleId>123</RuleId>
+            <Resource>handleService</Resource>
+            <AppName>ahas-demo</AppName>
+            <MaxQueueingTimeMs>3000</MaxQueueingTimeMs>
+            <ControlBehavior>0</ControlBehavior>
+            <MetricType>0</MetricType>
+            <Threshold>10</Threshold>
+            <Enable>true</Enable>
+        </Datas>
+        <TotalPage>3</TotalPage>
+        <PageSize>10</PageSize>
+        <TotalCount>23</TotalCount>
+    </Data>
+    <Code>200</Code>
+    <Success>true</Success>
 </ListHotParamRulesOfResourceResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
+HTTP/1.1 200 OK
+Content-Type:application/json
+
 {
-    "Message":"null",
-    "RequestId":"3FEEAD12-CE22-4EDE-A729-CE94EC070610",
-    "Data":
-    {
-        "TotalCount":"23",
-        "PageSize":"10",
-        "TotalPage":"3",
-        "Datas":
-        [{
-            "BurstCount":"2",
-            "ControlBehavior":"0",
-            "MetricType":"0",
-            "RuleId":"123",
-            "Resource":"handleService",
-            "StatDurationSec":"1",
-            "Enable":"true",
-            "MaxQueueingTimeMs":"3000",
-            "ParamIdx":"1",
-            "Namespace":"default",
-            "AppName":"ahas-demo",
-            "Threshold":"10"
-        },
-        {
-            "ParamFlowItemList":
-            [{
-                "ItemValue":"apple",
-                "ItemType":"String",
-                "Threshold":"10"
-            }]
-        }
-        ],
-        "PageIndex":"1"
-    },
-    "Code":"200",
-    "Success":"true"
+  "Message" : "null",
+  "RequestId" : "3FEEAD12-CE22-4EDE-A729-CE94EC070610",
+  "Data" : {
+    "PageIndex" : 1,
+    "Datas" : [ {
+      "ParamIdx" : 1,
+      "Namespace" : "default",
+      "ParamFlowItemList" : [ {
+        "ItemValue" : "apple",
+        "ItemType" : "String",
+        "Threshold" : 10
+      } ],
+      "StatDurationSec" : 1,
+      "BurstCount" : 2,
+      "RuleId" : 123,
+      "Resource" : "handleService",
+      "AppName" : "ahas-demo",
+      "MaxQueueingTimeMs" : 3000,
+      "ControlBehavior" : 0,
+      "MetricType" : 0,
+      "Threshold" : 10,
+      "Enable" : true
+    } ],
+    "TotalPage" : 3,
+    "PageSize" : 10,
+    "TotalCount" : 23
+  },
+  "Code" : "200",
+  "Success" : true
 }
 ```
 
